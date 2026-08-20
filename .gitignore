@@ -139,4 +139,7 @@ pyproject.toml
 
 
 # else
-answer.ipynb
+answer.ipynb# pixi environments
+.pixi/*
+!.pixi/config.toml
+

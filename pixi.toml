@@ -1,0 +1,17 @@
+[workspace]
+authors = ["FreekPols <c.f.j.pols@tudelft.nl>"]
+channels = ["conda-forge"]
+name = "FYPLC"
+platforms = ["win-64", "linux-64", "osx-64", "osx-arm64"]
+version = "0.1.0"
+
+[tasks]
+start = "jupyter lab"
+
+[dependencies]
+python = "3.13.*"
+numpy = ">=2.5.2,<3"
+scipy = ">=1.18.0,<2"
+matplotlib = ">=3.11.1,<4"
+jupyterlab = ">=4.6.3,<5"
+ipywidgets = ">=8.1.9,<9"
