@@ -178,6 +178,7 @@ print(a)
 
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-3dae75f8494e44f3", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
 ```{exercise}
+:label: NB4_
 Set the first three, and the last two, entries of the following array to zero:
 ```
 <!-- #endregion -->
@@ -247,8 +248,97 @@ And finally, unlike indexing, Python is a bit lenient (merciful) if you slice of
 print(a[0:20])
 ```
 
+### Slicing Behavior: Views vs. Copies
+
+When you slice an object, you get either a **view** (a window into the original data) or a **copy** (a new, independent object). This behavior is different for NumPy arrays and Python lists.
+
+#### 1. NumPy Arrays: Slicing Creates a View
+
+Slicing a NumPy array creates a **view** for performance. This means modifying the slice will alter your original array.
+
+```python
+import numpy as np
+
+numpy_array = np.array([10, 20, 30, 40, 50])
+array_slice = numpy_array[1:4]  # This is a view
+
+array_slice[0] = 99  # Modify the view
+
+# The original array is also changed!
+print(f"Original array: {numpy_array}")
+# Output: Original array: [10 99 30 40 50]
+```
+
+To get a **copy** instead of a view, use the `.copy()` method: `array_copy = numpy_array[1:4].copy()`.
+
+**Exception**: Indexing with a **boolean mask** creates a **copy**, not a view.
+
+```python
+mask = numpy_array > 25
+masked_copy = numpy_array[mask]  # This is a copy
+masked_copy[0] = 999             # This does NOT change numpy_array
+```
+
+#### 2. Lists: Slicing Creates a Shallow Copy
+
+Slicing a list creates a **shallow copy**, a new list whose contents are references to the original items. Modifying the elements of the slice will not affect the original list.
+
+```python
+my_list = [10, 20, 30, 40, 50]
+list_slice = my_list[1:4]  # This is a shallow copy
+list_slice[0] = 99         # Modify the copy
+
+# The original list is NOT changed
+print(f"Original list: {my_list}")
+# Output: Original list: [10, 20, 30, 40, 50]
+```
+
+However, you can use slice assignment to modify the original list **in place**:
+
+```python
+my_list = [10, 20, 30, 40, 50]
+my_list[1:3] = [99, 99]  # Replace a slice of the original list
+print(f"Modified list: {my_list}")
+# Output: Modified list: [10, 99, 99, 40, 50]
+```
+
+### Shallow vs. Deep Copies
+
+We've said that list slicing creates a "shallow copy," but what does that mean? Let's look at an example with nested lists.
+
+- A **Shallow Copy** creates a new list, but it populates it with *references* to the items in the original. If those items are mutable (like another list), changes to them will be visible in both lists.
+
+```python
+original = [[1, 2], [3, 4]]
+shallow_copy = original[:]  # Create a shallow copy
+
+shallow_copy[0][0] = 99 # Modify a nested list
+
+# The change appears in BOTH because they share the inner list object
+print(f"Original: {original}")       # Output: Original: [[99, 2], [3, 4]]
+print(f"Shallow Copy: {shallow_copy}") # Output: Shallow Copy: [[99, 2], [3, 4]]
+```
+
+- A **Deep Copy** creates a new list *and* recursively copies every object inside it, creating a truly independent duplicate. For this, you can use the `copy` module.
+
+```python
+import copy
+
+original = [[1, 2], [3, 4]]
+deep_copy = copy.deepcopy(original) # Create a deep copy
+
+deep_copy[0][0] = 99 # Modify a nested list
+
+# Only the deep copy is changed
+print(f"Original: {original}")     # Output: Original: [[1, 2], [3, 4]]
+print(f"Deep Copy: {deep_copy}")  # Output: Deep Copy: [[99, 2], [3, 4]]
+```
+
+NumPy `.copy()` makes a shallow copy of the `ndarray`, but since NumPy arrays usually only contain immutable objects, this acts the same as a deep copy. A multidimensional NumPy array is not seen as an array of arrays like a multidimensional list, but is instead seen as a single, continuous block of memory containing all the elements. The array object simply holds metadata (like its shape) that tells NumPy how to interpret this flat block of data as a multidimensional grid.
+
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-8d1518c5eafa34e8", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
 ```{exercise}
+:label: NB4_
 Slicing can also be used to *set* multiple values in an array at the same time. Use slicing to set first 10 entries of the array below to zero in one line of code.
 ```
 <!-- #endregion -->
@@ -262,6 +352,7 @@ print(a)
 ```
 
 ```{exercise}
+:label: NB4_
 The same exercise but now code in a smarter way.
 ```
 
@@ -317,7 +408,7 @@ It turns out: it uses **neither!** In Python, the notation `a*a` produces what i
 
 `a*b = [a[0]*b[0], a[1]*b[1], a[2]*b[2], ...]`
 
-(Mathematically, this has a fancy name called the [Hadamard product](https://en.wikipedia.org/wiki/Hadamard_product_(matrices)), but as you can see, despite the fancy name, it's actually very simple...)
+(Mathematically, this has a fancy name called the <a href=https://en.wikipedia.org/wiki/Hadamard_product_(matrices)>Hadamard product</a>, but as you can see, despite the fancy name, it's actually very simple...)
 
 We can see this in action here:
 <!-- #endregion -->
@@ -359,6 +450,7 @@ print(a>3)
 
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-8657218bbd2eabbc", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
 ```{exercise}
+:label: NB4_
 Generate a sequence of the first 20 powers of 2 in a numpy array (starting at $2^0$). 
 
 Your output should be an array $[2^0, 2^1, 2^2, 2^3, ...]$. 
@@ -427,6 +519,7 @@ print("Step size is: ", a[1]-a[0])
 
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-60d973103e7a78a9", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
 ```{exercise}
+:label: NB4_
 Generate an array that runs from -2 to 1 with 20 points using `linspace`.
 ```
 <!-- #endregion -->
@@ -464,11 +557,12 @@ print("Step size is: ", a[1]-a[0])
 ```
 
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-ab1a61494f1f5b33", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
-For this reason, I do not find myself using `np.arange()` very often, and mostly use `np.linspace()`. There are also several other useful functions, such as [np.geomspace()](https://docs.scipy.org/doc/numpy/reference/generated/numpy.geomspace.html), which produces geometrically spaced points (such that they are evenly spaced on a log scale). 
+For this reason, I do not find myself using `np.arange()` very often, and mostly use `np.linspace()`. There are also several other useful functions, such as <a href=https://docs.scipy.org/doc/numpy/reference/generated/numpy.geomspace.html>np.geomspace()</a>, which produces geometrically spaced points (such that they are evenly spaced on a log scale). 
 <!-- #endregion -->
 
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-3a0d9465353f954b", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
 ```{exercise}
+:label: NB4_
 Generate a numpy array that has a first element with value 60 and last element 50 and takes steps of -0.5 between the values. 
 ```
 <!-- #endregion -->
@@ -491,12 +585,13 @@ print(a)
 ```
 
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-624c748e1b750b24", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
-This will generate uniform random numbers on the range of 0 to 1, but there are also several other random number generator functions that can make [normally distributed](https://en.wikipedia.org/wiki/Normal_distribution) random numbers, or random integers, and more.
+This will generate uniform random numbers on the range of 0 to 1, but there are also several other random number generator functions that can make <a href=https://en.wikipedia.org/wiki/Normal_distribution>normally distributed</a> random numbers, or random integers, and more.
 <!-- #endregion -->
 
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-bf4eeb182ddf3fdf", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
 ```{exercise}
-Generate a numpy array, `rounded_grades` that contains 300 random grades that have a distribution of a [bell-shaped curve](https://www.mathsisfun.com/data/standard-normal-distribution.html) that might represent the final grades of the students in this course, with an average grade of 7.5 and a standard deviation of 1. Make sure your grades are rounded to a half point.
+:label: NB4_
+Generate a numpy array, `rounded_grades` that contains 300 random grades that have a distribution of a <a href=https://www.mathsisfun.com/data/standard-normal-distribution.html>bell-shaped curve</a> that might represent the final grades of the students in this course, with an average grade of 7.5 and a standard deviation of 1. Make sure your grades are rounded to a half point.
 
 (You may find it useful have to look at the help of the `np.random.normal()` function.
 
@@ -511,9 +606,10 @@ print(rounded_grades)
 ```
 
 ```{exercise}
+:label: NB4_
 There are various ways in which you can analyse your grade distribution.
 
-You can plot a [histogram](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.hist.html) of the grade distribution. Make sure that the width of our histogram bars is 0.5, corresponding to our rounded grades.
+You can plot a <a href=https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.hist.html>histogram</a> of the grade distribution. Make sure that the width of our histogram bars is 0.5, corresponding to our rounded grades.
 ```
 
 ```python
@@ -611,6 +707,7 @@ print(np.eye(10,k=-1))
 
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-484f34f51c8f8c5e", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
 ```{exercise}
+:label: NB4_
 Use Python to calculate the following matrix multiplication: 
 
 $$
@@ -725,6 +822,7 @@ print("The cummulative sum is", cumsum)
 ```
 
 ```{exercise}
+:label: NB4_
 
 Below we have a set of repeated measurements. We want to understand how the average value of our repeated measurements evaluates over time, that is, how does the average value change as function of $N$ repeated measurements? To investigate this: calculate and plot the average value as function of the number of measurements.
 ```
@@ -805,6 +903,7 @@ https://docs.scipy.org/doc/numpy/reference/index.html
 
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-081110b083e1eeb8", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
 ```{exercise}
+:label: NB4_
 
 **a)**
 Create an array with values ranging from 14 to 42, skipping the odd numbers.
@@ -868,15 +967,15 @@ print("\nNumpy was %.1f times faster!" % (t_forloop/t_np))
 ```
 
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-bbb6d85899ba86b1", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
-Why is numpy so much faster? The reason is that Python is an [interpreted language](https://en.wikipedia.org/wiki/Interpreted_language). In each of the steps of the `for` loop, the Python kernel reads in the next step it has to do, translates that into an instruction for your computer processor, asks the computer to perform the step, gets the result back, reads in the next step, translates that into a processor instruction, sends that as an instruction to the computer processor, etc, etc. 
+Why is numpy so much faster? The reason is that Python is an <a href=https://en.wikipedia.org/wiki/Interpreted_language>interpreted language</a>. In each of the steps of the `for` loop, the Python kernel reads in the next step it has to do, translates that into an instruction for your computer processor, asks the computer to perform the step, gets the result back, reads in the next step, translates that into a processor instruction, sends that as an instruction to the computer processor, etc, etc. 
 
-If we did the same test in a [compiled programing language](https://en.wikipedia.org/wiki/Compiled_language) like [C](https://en.wikipedia.org/wiki/C_(programming_language)), there would be no difference if we used a library function or if we wrote our own `for` loop. 
+If we did the same test in a <a href=https://en.wikipedia.org/wiki/Compiled_language>compiled programing language</a> like <a href=https://en.wikipedia.org/wiki/C_(programming_language)>C</a>, there would be no difference if we used a library function or if we wrote our own `for` loop. 
 
 When you use smart functions in Python libraries, like (many of) those in numpy, numpy will actually use an external library compiled in a language like C or Fortran that is able to send all of the calculation in one step to your computer processor, and in one step, get all the data back. This makes Python nearly as fast as a compiled language like C or Fortran, as long as you are smart in how you use it and avoid having "manual" `for` loops for large or long calculations. 
 
 (For small calculations, Python coded `for` loops are perfectly fine and very handy!)
 
-In the language of interpreted programmers, finding smart ways of getting what you need done using "compiled library functions" is often referred to as [vectorisation](https://en.wikipedia.org/wiki/Array_programming). 
+In the language of interpreted programmers, finding smart ways of getting what you need done using "compiled library functions" is often referred to as <a href=https://en.wikipedia.org/wiki/Array_programming>vectorisation</a>. 
 
 Note that even normal mathematical operators are actually "vectorized functions" when they operate:
 <!-- #endregion -->
@@ -961,6 +1060,7 @@ This may sound a bit cumbersome, and of course in this example calculating $\pi 
 In the next exercises, you are going to calculate the integral of the function $f(x) = e^{x^2}$ in the interval [0,1] using the Monte Carlo method. 
 
 ```{exercise}
+:label: NB4_
 
 First, make a plot to get an idea of what the function looks like. 
 
@@ -986,6 +1086,7 @@ For this, we will use the np.random.uniform() function, which generates random f
 Moreover, it is wise to define the area by four points: $x_a$, $x_b$, $y_a$ and $y_b$.
 
 ```{exercise}
+:label: NB4_
 
 Complete the code below to generate a random sample of y-values in an appropriate range.
 ```
@@ -1054,6 +1155,7 @@ Our method gives a reasonable answer, but as you can see the uncertainty is rela
 We should therefore try to avoid the use of a for loop and instead use a comparison operator to speed up the calculation.
 
 ```{exercise}
+:label: NB4_
 Again, complete the code below and calculate the integral, this time without using a for loop.
 ```
 
@@ -1099,6 +1201,7 @@ print(new_array)
 ```
 
 ```{exercise}
+:label: NB4_
 
 Make a figure in which you plot:
 
@@ -1119,8 +1222,9 @@ random_y = np.random.uniform( , ,1000)
 ```
 
 ```{exercise}
+:label: NB4_
 
-One way to 'improve' the quality of your data, making it less noisy, is the use of a [moving average filter](https://en.wikipedia.org/wiki/Moving_average). The moving average filter calculates the average value of N elements, N often being 3 or 5. This smooth out any abrupt changes and allows a better focus on long term trends. Of course you will lose two elements of the entire dataset (think yourselves why). 
+One way to 'improve' the quality of your data, making it less noisy, is the use of a <a href="https://en.wikipedia.org/wiki/Moving_average">moving average filter</a>. The moving average filter calculates the average value of N elements, N often being 3 or 5. This smooth out any abrupt changes and allows a better focus on long term trends. Of course you will lose two elements of the entire dataset (think yourselves why). 
 
 
 The filtered data is stored in an array: $F(i) = \frac{p(i)+p(i+1)+p(i+2)}{3}$, looped over all elements $p(i)$. More precise: $F(i)=\frac{1}{k}\sum_{i}^{i+k-1}p(i)$

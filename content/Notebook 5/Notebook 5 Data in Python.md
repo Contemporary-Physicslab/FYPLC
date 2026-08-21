@@ -29,7 +29,7 @@ This test is for testing your current skills in Python. You can use it in two wa
 * post-test: test your skills after Notebook 5. Check whether you learned enough.
 
 **Doing an analysis**
-Eric so far survived the first weeks of his employment. As he showed some true skills, he is asked to help in building an RC-filter. First, some initial data needs to be analysed. He receives a datafile called [pretestdata.csv](pretestdata.csv). Once he retrieved (loaded) this data, he plots it first. He then uses the theoretical formula that should describe the pattern in the data: $\frac{U_C}{U_{max}}=\frac{1}{\sqrt{1+(wRC)^2}}$, where $w$ is the angular frequency given by $w=2\pi f$. $RC$ can be considered a constant which can be found using least-square fitting.
+Eric so far survived the first weeks of his employment. As he showed some true skills, he is asked to help in building an RC-filter. First, some initial data needs to be analysed. He receives a datafile called [pretestdata.csv](https://github.com/Contemporary-Physicslab/FYPLC/blob/main/book/Course%20files/Notebook%205/pretestdata.csv). Once he retrieved (loaded) this data, he plots it first. He then uses the theoretical formula that should describe the pattern in the data: $\frac{U_C}{U_{max}}=\frac{1}{\sqrt{1+(wRC)^2}}$, where $w$ is the angular frequency given by $w=2\pi f$. $RC$ can be considered a constant which can be found using least-square fitting.
 - Retrieve the data and plot these using a log-scale on the x-axis. Think about the scientific rules for making plots.
 - Find the best estimate of RC and plot the fitfunction on top of the dataset.
 - Carry out a residual analysis.
@@ -98,7 +98,7 @@ with open("v_vs_time.dat") as file:
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-f79c995cb536082e", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
 We can also read (and print) the entire file using `print(file.read())`. 
 
-Typically (if you're lucky), the measurement software will save its data in an ([ACII](https://en.wikipedia.org/wiki/ASCII)) text file. (Or at least there will be software for converting the data to an ASCII text file...) For example, let's think about an experiment where we measure a voltage as a function of time. In this case, the data will often be recorded in two columns of numbers in the text file, separated by a space. The first number would represent the time of the measurement, say in seconds, and the second the measured voltage, in volts:
+Typically (if you're lucky), the measurement software will save its data in an (<a href=https://en.wikipedia.org/wiki/ASCII>ASCII</a>) text file. (Or at least there will be software for converting the data to an ASCII text file...) For example, let's think about an experiment where we measure a voltage as a function of time. In this case, the data will often be recorded in two columns of numbers in the text file, separated by a space. The first number would represent the time of the measurement, say in seconds, and the second the measured voltage, in volts:
 
 `File: v_vs_time.dat:`
 ```
@@ -114,7 +114,7 @@ Typically (if you're lucky), the measurement software will save its data in an (
 ...
 ```
 
-This is an example of a file format called [Delimiter-separated values (DSV)](https://en.wikipedia.org/wiki/Delimiter-separated_values). In the example above, the "delimiter" (ie the thing that separates the values) is a space. 
+This is an example of a file format called <a href=https://en.wikipedia.org/wiki/Delimiter-separated_values>Delimiter-separated values (DSV)</a>. In the example above, the "delimiter" (ie the thing that separates the values) is a space. 
 
 Another common delimiter is a comma `,` or `;`, often named a `.csv` file for "comma separated value" file. This is a common "export" format from spreadsheets like excel. A third common value is a "tab separated value" file (often saved with a `.tsv` file extension, also available as an export option from some spreadsheets), which separates the values in the file be tab characters (which in Python strings show up as special character `\t`, a bit like the newline `\n`).
 
@@ -124,7 +124,7 @@ https://docs.scipy.org/doc/numpy/reference/generated/numpy.loadtxt.html
 
 It can handle any type of **delimiter**: the default is any whitespace (tab or space), but this can also be configured using the `delimiter=` keyword argument. It also does not care about the file extension: for example, it is fine if a CSV file does not have a `.csv` extension (it doesn't even have to have an extension!). A typical convention is to name the files containing ASCII text data with an extension `.dat`.
 
-Let's give it a try using the file [v_vs_time.dat](v_vs_time.dat): 
+Let's give it a try using the file [v_vs_time.dat](https://github.com/Contemporary-Physicslab/FYPLC/blob/main/book/Course%20files/Notebook%205/v_vs_time.dat): 
 <!-- #endregion -->
 
 ```python
@@ -166,6 +166,7 @@ We can check that the data is correct by opening the data file itself from the J
 
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-def50c91314bd96b", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
 ```{exercise}
+:label: NB5_
 Load the data from the file [exercise_data.dat](https://github.com/Contemporary-Physicslab/FYPLC/blob/main/book/Course%20files/Notebook%205/exercise_data.dat). The first column represents a measurement time in seconds, and the second represents a measurement voltage in volts. How many points are in the dataset? 
 
 *(Important: make sure that you use different variable names than t and v for the data you load, since we will continue to use the data we loaded in the example code in the sections below!)*
@@ -216,6 +217,7 @@ If you go back to your workspace in a new tab, you will can see that this file h
 <!-- #endregion -->
 
 ```{exercise}
+:label: NB5_
 Make a testarray $x$ running from 1 to 100 with an interval of 0.1. Write a function $y=3.05 x + 0.95$. Use this function to make a new array for $y$. Save your data in the file 'testfile.csv' using ; as a delimiter (NOTE: delimiters are sometimes ";" and sometimes "," Always inspect the datafile first.). If all went well, when running the subsequent cell your data are loaded and shown in a plot.
 ```
 
@@ -259,7 +261,7 @@ plt.show()
 ```
 
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-1d9eda6969d17554", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
-Matplotlib will automatically change the color of the second dataset (you can also control them manually, see the [documentation]( https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.pyplot.plot.html)). But it can be hard to tell which one is which, and for this reason, it can be useful to add a legend to your plot. Furthermore, if you want a really big figure, you can also adjust the figure size:
+Matplotlib will automatically change the color of the second dataset (you can also control them manually, see the <a href= https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.pyplot.plot.html>documentation</a>). But it can be hard to tell which one is which, and for this reason, it can be useful to add a legend to your plot. Furthermore, if you want a really big figure, you can also adjust the figure size:
 <!-- #endregion -->
 
 ```python
@@ -274,6 +276,7 @@ plt.show()
 
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-1f4975d1b1b7c3a2", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
 ```{exercise}
+:label: NB5_
 Make a plot of the data you loaded from exercise 5.1. 
 ```
 <!-- #endregion -->
@@ -285,6 +288,7 @@ Make a plot of the data you loaded from exercise 5.1.
 
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-93d67850489cb7df", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
 ```{exercise}
+:label: NB5_
 As you may have noticed the data from `exercise_data.dat` does not seem like straight line, but instead looks like a power law function $V = at^p$ with power $p$. 
 
 One way to test for such power law relations is to make a plot with an x-axis that is not $t$ but instead $t^p$: if you get the correct $p$, then the  data plotted will form a straight line. 
@@ -334,6 +338,7 @@ Here, we also used the `linewidth` parameter (which can be shorted to `lw` to sa
 
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-46dd5bd28954941b", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
 ```{exercise}
+:label: NB5_
 Another way to get the exponent is to plot $\log(V)$ vs $\log(t)$ (a log-log plot). If the data really follows a power law relation, then this should give a straight line with a slope determined by the exponent. Try this, and then add a straight line $\log(V) = p \log(t)$ to the plot. Play around with the value of $p$ until the line has the same slope as the data. For this plot, use solid filled circle for the data and a solid line for the theory.
 
 *(Do you get a warning message? Why?)*
@@ -396,7 +401,7 @@ plt.show()
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-3e41d51a52bac6e2", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
 Now that we have a 'good' estimate of our parameters, how can we find the **best** parameters (`a` and `b` in this case) for our data? And how do I know how accurately my parameters fit the data? 
 
-For that, we can use a procedure called [least squares fitting](https://en.wikipedia.org/wiki/Least_squares). In the remaining part of this notebook, you will learn more about least squares fitting and how it works - the video below is a very short introduction to the least squares method. Here, we will look at how to code it in Python, how to use it to get the best fit parameters of a model for you data, and how to find out what the [statistical error](https://en.wikipedia.org/wiki/Errors_and_residuals) is on the parameters of your model given the data you are using for the fit. 
+For that, we can use a procedure called <a href=https://en.wikipedia.org/wiki/Least_squares>least squares fitting</a>. In the remaining part of this notebook, you will learn more about least squares fitting and how it works - the video below is a very short introduction to the least squares method. Here, we will look at how to code it in Python, how to use it to get the best fit parameters of a model for you data, and how to find out what the <a href=https://en.wikipedia.org/wiki/Errors_and_residuals>statistical error</a> is on the parameters of your model given the data you are using for the fit. 
 <!-- #endregion -->
 
 <div style="width:75%; margin:0 auto;">
@@ -405,6 +410,7 @@ For that, we can use a procedure called [least squares fitting](https://en.wikip
 
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-b352eec645cffa6c", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
 ```{exercise}
+:label: NB5_
 Using the data you loaded in exercise 5.1, try fitting the function $V = at^p$ "by hand" to the data by manually adjusting $a$ and $p$ and replotting the function until you think you have the best fit. What are the values of $a$ and $p$ that you find? 
 ```
 <!-- #endregion -->
@@ -501,6 +507,7 @@ In addition, sometimes in measurements, we also have error bars on the each of t
 
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-728ba4c89dc5d7e0", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
 ```{exercise}
+:label: NB5_
 Perform a least squares fit to of the data from exercise 5.1 to the function $V = at^p$. Make  a plot of the function with the values of $p$ and $a$ from the fit on top of the data. How close are the fitted values to your attempt at fitting by hand? 
 ```
 <!-- #endregion -->
@@ -599,7 +606,7 @@ plt.ylabel('pdf')
 plt.show()
 ```
 
-Well... it sure looks likes a normal distribution. But can we visualize it even better? We can try to fit using a normal distrubtion. The details about the normal distrubution will be discussed in Notebook 6. The [scipy norm library](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.norm.html) is here of good use!
+Well... it sure looks likes a normal distribution. But can we visualize it even better? We can try to fit using a normal distrubtion. The details about the normal distrubution will be discussed in Notebook 6. The <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.norm.html">scipy norm library</a> is here of good use!
 
 ```python
 from scipy.stats import norm
@@ -625,7 +632,7 @@ What did we do here? We created a test dataset and for each of these values we c
 
 We found above that the best statistical fit to our data was not our initial estimate of `a = 2`, but actually more like `a = 2.0148`. But the line with `a = 2` also looked pretty good, right? How much better is the fit with `a = 2.0148`? 
 
-To find this out, we can use the other variable that `curve_fit` returned: the [covariance matrix](https://en.wikipedia.org/wiki/Covariance_matrix). With two parameters, the covariance matrix is a 2x2 array:  
+To find this out, we can use the other variable that `curve_fit` returned: the <a href=https://en.wikipedia.org/wiki/Covariance_matrix>covariance matrix</a>. With two parameters, the covariance matrix is a 2x2 array:  
 <!-- #endregion -->
 
 ```python
@@ -634,7 +641,7 @@ print(covariance)
 ```
 
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-f0ffe772615a4907", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
-The most important two for us are the diagonal elements: the first diagonal element tells us the square of the [standard error](https://en.wikipedia.org/wiki/Standard_error) $\sigma_a$ of parameter `a` and the second diagonal element gives us the square of $\sigma_b$:
+The most important two for us are the diagonal elements: the first diagonal element tells us the square of the <a href=https://en.wikipedia.org/wiki/Standard_error>standard error</a> $\sigma_a$ of parameter `a` and the second diagonal element gives us the square of $\sigma_b$:
 <!-- #endregion -->
 
 ```python
@@ -664,7 +671,7 @@ print("The value of b is %.2f +/- %.2f V" % (b_fit, b_err))
 
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-b4032ef7311840a6", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
 Reminder: as earlier shown, we use a placeholder format `%.2f` designating that we want to print as float with two decimals. There are a 
-[lot](https://www.python-course.eu/python3_formatted_output.php) of other ways to format your string.
+<a href=https://www.python-course.eu/python3_formatted_output.php>lot</a> of other ways to format your string.
 
 Note that typically when you quote an uncertainty, you should pick only one significant digit. And also, when you quote the value of a parameter, you should also quote it with the same number of decimal places as your error. 
 
@@ -672,6 +679,7 @@ So in this case, I quote the value of `a` as 2.015, and not its "exact" value of
 <!-- #endregion -->
 
 ```{exercise}
+:label: NB5_
 Below we have made a fake dataset for you. The parameters are known to you. But still, it is your task to 'deconstruct' the dataset and find the parameters as if these were unknown to you.
 ```
 
@@ -685,6 +693,7 @@ y_meas = 0.2345*x_meas**2 + 3.045*x_meas + np.random.normal(0,1.5,len(x_meas))
 
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-d3c840f7897a22f3", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
 ```{exercise}
+:label: NB5_
 Calculate the errors on the fit parameters from your fit in exercise 5.5. Was your estimate of $p$ from exercise 5.4 within the statistical error margins from you fit? Were the values for $a$ and $p$ you found from "fitting by hand" within the statistical error margins? 
 ```
 <!-- #endregion -->
@@ -701,6 +710,7 @@ Calculate the errors on the fit parameters from your fit in exercise 5.5. Was yo
 
 
 ```{exercise}
+:label: NB5_
 In [dataset.csv](dataset.csv) we have made you a dataset where you have to find the formula describing it. Find the parameters and their associated uncertainties. Don't forget to analyse your residuals to see whether you found the proper formula.
 
 Note! This excercise consumes a lot of your time...

@@ -41,6 +41,7 @@ password = 'practicum123'
 tries = 0 
 
 ### Your code
+
 ```
 
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-820ab9eec85e7818", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
@@ -111,6 +112,7 @@ if not False:
 
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-8f5002353d747ef9", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
 ```{exercise}
+:label: NB3_
 Try out the following conditional statements, filling in the values specified to replace the `---` in the code cells.
 
 Check if the integer `1` is true:
@@ -219,6 +221,7 @@ In addition to the `==` operator, there are also several other comparison operat
 
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-f6b4a7e98c6672e0", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
 ```{exercise}
+:label: NB3_
 Test the operators `<`, `>`, `>=`, `<=`, `!=` by trying them in an if statement with numerical values. 
 ```
 <!-- #endregion -->
@@ -287,6 +290,7 @@ if 5 < 6 and 10 > 9:
 
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-8a0f0f9e5985f291", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
 ```{exercise}
+:label: NB3_
 Try out the following examples using the if statement form from above for the conditions
 
 **(a)** Check if 5 is smaller than 6, AND 10 is smaller equal than 9:
@@ -308,7 +312,7 @@ Try out the following examples using the if statement form from above for the co
 ```
 
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-a09e89673e9b20d3", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
-To understand what happened in part (b), we have to know if Python first performs the operation `False or True` or if it performs the operation `not False` first. The rules for which order Python does things, in can be found in the documentation for [operator precedence](https://docs.python.org/3/reference/expressions.html#operator-precedence). In the example above, we can see that the `not` operator had precedence and Python performed the `not` before it performed the `or`. 
+To understand what happened in part (b), we have to know if Python first performs the operation `False or True` or if it performs the operation `not False` first. The rules for which order Python does things, in can be found in the documentation for <a href=https://docs.python.org/3/reference/expressions.html#operator-precedence>operator precedence</a>. In the example above, we can see that the `not` operator had precedence and Python performed the `not` before it performed the `or`. 
 
 What if I wanted to have Python perform the `or` first? You do this by enclosing `True  or False` in brackets:
 <!-- #endregion -->
@@ -358,7 +362,7 @@ if a<6:
 ```
 
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-bcd1475b5312a9de", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
-Since the code inside your `if` code block is just regular code, you can also add another if statement inside that code block. This creates a [nested](https://en.wikipedia.org/wiki/Nesting_(computing)) `if` statement inside your first one:
+Since the code inside your `if` code block is just regular code, you can also add another if statement inside that code block. This creates a <a href=https://en.wikipedia.org/wiki/Nesting_(computing)>nested</a> `if` statement inside your first one:
 <!-- #endregion -->
 
 ```python
@@ -375,6 +379,7 @@ else:
 
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-ae510a3a63768c64", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
 ```{exercise}
+:label: NB3_
 Practice the use of the if-elif-else statement with the following exercise by filling in the missing conditional statements. You must use all three of `if`, `elif` and `else`. You also can not use the `end` operator.
 ```
 <!-- #endregion -->
@@ -496,6 +501,7 @@ Note here I have also used a new operator `+=`: this is a special assignment ope
 
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-8419ddf039469350", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
 ```{exercise}
+:label: NB3_
 Write a function to calculate the factorial of a number using a while loop. The factorial, denoted with !, is the product of all numbers up to that number, i.e. $4!=1\cdot2\cdot3\cdot4$. Note that perhaps unexpectedly for you 0!=1 for which your function also have to give an answer.
 
 *If your code doesn't seem to stop running, you may need to "debug" your code to see where your mistake is (I did). A handy way to do this, for example, is to add a `print(i)` statement inside your while loop: it will enable you to see if the variable `i` is doing what you think it should be...*
@@ -549,6 +555,7 @@ And that brings us to the range function...
 
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-2fa53e57cfc647d0", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
 ```{exercise}
+:label: NB3_
 Calculate the sum $\sum_{i=0}^n\sin^2(i)$ for n=10 using a `for` loop.
 ```
 <!-- #endregion -->
@@ -556,6 +563,17 @@ Calculate the sum $\sum_{i=0}^n\sin^2(i)$ for n=10 using a `for` loop.
 ```python
 # Your code here
 for...:
+```
+
+### Enumerate
+
+Sometimes it might be usefull to obtain both the element and the index of an array or list. One tool that lets you do that is enumerate.
+Enumerate works on every iterable (so on numpy arrays, lists, ...)
+
+```python
+A = ['This','is','an','iterable']
+for i, word in enumerate(A):
+    print('index = ',i,'element = ',word)
 ```
 
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-58d187a8c4c8dc2e", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
@@ -624,7 +642,8 @@ Note that the `range` function works only with integers: `range(1,11,0.5)` is no
 
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-95d40298b2f365ae", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
 ```{exercise}
-Calculate the sum of all numbers from 1 to 100 using a `for` loop with the `range()` function. Compare it to the famous value that Gauss calculated in class as an [https://nrich.maths.org/2478>](elementary school student).
+:label: NB3_
+Calculate the sum of all numbers from 1 to 100 using a `for` loop with the `range()` function. Compare it to the famous value that Gauss calculated in class as an <a href=https://nrich.maths.org/2478>elementary school student</a>. 
 ```
 <!-- #endregion -->
 
@@ -638,7 +657,7 @@ Calculate the sum of all numbers from 1 to 100 using a `for` loop with the `rang
 
 In the examples above, we looked at using `for` loops to iterate through a list of integers. 
 
-In Python, however, `for` loops are much more flexible than only iterating over numbers: `for` loops can iterate over any [iteratable object](https://www.programiz.com/python-programming/iterator), including 1-D numpy arrays, which we will see in later notebooks.
+In Python, however, `for` loops are much more flexible than only iterating over numbers: `for` loops can iterate over any <a href=https://www.programiz.com/python-programming/iterator>iteratable object</a>, including 1-D numpy arrays, which we will see in later notebooks.
 
 But, as an example, here is a piece of code that uses the `numpy` random number generator to calculate the sum of 10 random integers between 0 and 100:
 <!-- #endregion -->
@@ -725,6 +744,7 @@ This is probably not a great example (if you are smart you can do this with less
 
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-10e1b8eed7f40b1c", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
 ```{exercise}
+:label: NB3_
 Write code that creates a variable `i` with an initial value of zero. Use a while loop that increments `i` by one as long as `i` is less than one million. Have your loop stop if `i` satisfies the condition $i(i-10) = 257024$. Have your code print the `i` that satisfies this condition (if there is one). 
 ```
 <!-- #endregion -->
@@ -734,6 +754,7 @@ Write code that creates a variable `i` with an initial value of zero. Use a whil
 ```
 
 ```{exercise}
+:label: NB3_
 In order to make sure that the seasons stay aligned with our calendars, leap years of 366 days have been introduced. A leap year is a year which is an integer multiple of 4 (except for years evenly divisible by 100, but not by 400),  https://en.wikipedia.org/wiki/Leap_year.   
 
 Make a function to check whether a certain year is a leap year using if/else statements to return True for leap years and False for normal years.
@@ -770,6 +791,7 @@ np.testing.assert_array_equal(test, answercheck, 'error', True)
 ```
 
 ```{exercise}
+:label: NB3_
 Sometimes we want to find the peaks in our data. One way to do this is to go through the array and check for every value if the values left and right are smaller.
 
 Write some code that finds the peak(s) of the array and that prints the index and value of all peaks.
@@ -784,6 +806,7 @@ y = np.array([2, 2, 3, 4, 5, 4, 3, 8, 6, 4])    # dummy data
 ```
 
 ```{exercise}
+:label: NB3_
 To keep your computer safe from others, it is probably password protected. Usually you have a few tries before the password entry is disabled for some time.
 
 You can enter your password three times before a timeout is given. If the timeout (sleep) is over, you have three other tries. The timeout time in seconds is given by $T = 60 + i^3$, where $i$ is the number of tries. 

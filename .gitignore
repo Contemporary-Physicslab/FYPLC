@@ -2,3 +2,4 @@
 .pixi/*
 !.pixi/config.toml
 _build
+.ipynb_checkpoints/

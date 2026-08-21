@@ -155,7 +155,8 @@ print("This is a message")
 It might be hard at first to write proper comments. The comments should be short but still add information that is of value. One can question the value of the comment above as it hardly adds information to what the code is already saying... Some more information can be found [here](https://stackabuse.com/commenting-python-code/).
 
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-4919a733b4210f11", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
-```{exercise}
+```{exercise} 
+:label: NB1_print
 Print your own string to the command line. Can you print special characters as well?
 ```
 <!-- #endregion -->
@@ -197,6 +198,7 @@ print("The value of a is", a)
 
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-a4382a92b6e9aeec", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
 ```{exercise} 
+:label: NB1_seperator
 Combine multiple strings and numerical values in a single `print` statement using the `,` separator.
 ```
 <!-- #endregion -->
@@ -208,6 +210,7 @@ Combine multiple strings and numerical values in a single `print` statement usin
 
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-cbf03d005dae5d5d", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
 ```{exercise} 
+:label: NB1_change_a
 Change the value of `a` to 7 by executing the following cell, and then re-run the **above** cell containing the command `print(a)` (the one with output `5`). What value gets printed now in that cell?  
 ```
 <!-- #endregion -->
@@ -410,6 +413,7 @@ Note here that I have used a backslash: this a way to split Python code across m
 Although it's not obvious, Python can also do "operations" on strings, the `+` mathematical operators we saw above also works with strings. 
 
 ```{exercise}
+:label: NB1_operator
 Discover what the `+` operator does to a string, i.e. print the output of the sum of two strings.
 ```
 <!-- #endregion -->
@@ -535,6 +539,7 @@ print(b[0]*2)
 ```
 
 ```{exercise}
+:label: NB1_list
 Try to change the first value of **b**. In order to do so, make sure **b** becomes a list! You can make use of b = list(a).
 ```
 
@@ -606,6 +611,7 @@ Note the difference between the two ways of making the array and their output!
 
 
 ```{exercise}
+:label: NB1_list
 Make a list and a numpy array in which the values 2, 3, 5 are stored. Multiply the list and array by the value 2 and print the outcome. What is the difference between the mathematical operation on the list and numpy array? Why do we, physicists, prefer numpy arrays? 
 ```
 
@@ -627,6 +633,7 @@ print(c)
 ```
 
 ```{exercise}
+:label: NB1_odd
 Below we have made two arrays, one with even numbers and one with odd numbers. Combine these two arrays in a single array and sort them (see https://numpy.org/doc/stable/reference/generated/numpy.sort.html). Next, delete the third element in the array.
 ```
 
@@ -729,8 +736,10 @@ print(type(a))
 ```
 
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-ce079e7a0832a0f5", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
-```{exercise} 1.10`** \
+```{exercise}
+:label: NB1_param
 Define a list of parameters with as many types as possible, i.e. all the examples you see above and maybe a few more. Use `%whos` to see how they look inside the computers' memory. Try to change their format and re-run the `%whos` command.
+```
 <!-- #endregion -->
 
 ```python
@@ -773,6 +782,7 @@ print(a+1)
 
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-74f5aea3a72d2f71", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
 ```{exercise}
+:label: NB1_oper2
 Discover what the following Python operators do by performing some math with them: `*`, `-`, `/`, `**`, `//`, `%`. Print the value of the mathematical operation to the command line in subsequent cells.
 ```
 <!-- #endregion -->
@@ -876,6 +886,7 @@ print('The number given by the use is %e ' %a) #prints with scientific notation
 
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-39dc108b097dadf4", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
 ```{exercise}
+:label: NB1_inp
 Use the `input` function to get parameters of integer, float and string format into the computer. Have Python check whether the proper type is assigned.
 ```
 <!-- #endregion -->
@@ -932,9 +943,11 @@ You can also keep on typing: if you just type `a` after you hit tab and then hit
 <!-- #endregion -->
 
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-6ea392babfac0516", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
-```{exercise} 1.13`** 
+```{exercise}
+:label: NB1_comple
 
 Use tab completion on the initial letters of a few of the commands that have been presented. Along the way you will discover many more Python commands!
+```
 <!-- #endregion -->
 
 ```python
@@ -1017,8 +1030,10 @@ In last resort, you can also always try a internet search: googling the error me
 <!-- #endregion -->
 
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-737d6eb17c2a2f4f", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
-```{exercise} 1.14`** \
+```{exercise} 
+:label: NB1_run
 Run the following code and try to understand what is going wrong by reading the error message.
+```
 <!-- #endregion -->
 
 ```python
@@ -1042,6 +1057,7 @@ The other tool is to type your variable, put a dot behind it and autocomplete us
 
 
 ```{exercise}
+:label: NB1_whos
 Try **?%whos** below and see what information is given.
 ```
 
@@ -1051,6 +1067,7 @@ Try **?%whos** below and see what information is given.
 ```
 
 ```{exercise}
+:label: NB1_vararr
 Make a variable and an array. Use the second tool to find out what actions can be performed on the two different types. 
 ```
 
