@@ -1,0 +1,21 @@
+# See docs at: https://mystmd.org/guide/frontmatter
+version: 1
+project:
+  id: 608311f8-9420-4106-a411-741c237aa0be
+  # title: First Year Physics Lab Course - Python for Physicists
+  # description:
+  # keywords: []
+  # authors: []
+  # github:
+  date: 2026-08-20
+  copyright: Delft University of Technology, CC BY NC 4.0
+  numbering: 
+
+extends:
+  - toc.yml
+          
+site:
+  template: book-theme
+  options:
+    favicon: figures/favicon.ico
+    logo: figures/TUDelft_logo_rgb.png

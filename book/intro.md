@@ -1,4 +1,0 @@
-(intro)=
-# First Year Physics Lab Course - Programming in Python
-
-These are the notebooks on Python for the TU Delfts' [First Year Physics Lab Course](https://contemporary-physicslab.github.io/NP-new-style/).
