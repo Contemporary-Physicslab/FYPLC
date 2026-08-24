@@ -1,7 +1,7 @@
 (get_started)=
 # Get started
 
-> Here we describe how to install the software required. You can do it on your own, but we advise to do it during the first lecture. Moreover, do not worry when things are not yet clear - it will take some time to understand what is happening and why we think this is a good way to work.
+> Here we describe how to install the software required. You can do it on your own, but we advise to do it during the first lecture. Moreover, do not worry when things are not yet fully clear - it will take some time to understand what is happening and why we think this is a good way to work.
 
 (software)=
 ## Software
@@ -38,7 +38,9 @@ We did not yet install Python and packages. We will do so now.
 We already created a `.toml` file in which we specified what needs to be installed. It will take a while for your computer to download and install all packages.
 
 ```{note}
-We also created a `start.bat` file that will do the above automatically and instantely open jupyter lab.
+On a windows computer, you can double click the `start.bat` file that we create. It will do the above automatically and instantly open jupyter lab.
+
+For MacOS: run `chmod +x ./start_macos.command && xattr -d com.apple.quarantine ./start_macos.command` (only the first time) and double click then the `start_macos.command` file.
 ```
 
 (run_course_files)=
@@ -50,10 +52,24 @@ Want to see the notebooks as a clear website (as probably seen here)? Run `pixi 
 
 ```
 
-## VSC
-A popular code editor is [Visual Studio Code](https://code.visualstudio.com/). It allows you to program in different languages, where it recognizes the commands in that language and adjusts the FONT so that it becomes better readable. Moreover, it allows you to install various packages (such as Jupyter Notebook). It also integrates GIT and allows to code using Co-Pilot, an AI pair programmer. We advise to use VSC as it allows for multiple programming languages. 
+## Start new projects with pixi
+For this course we created a pixi.toml file for you. We specified which software / libraries / packages should be installed. What if you have a new project where you need to use Python?
 
-### Terminal
+We derive the steps below from [pixi's own manual](https://pixi.prefix.dev/latest/getting_started/).
+
+1. Navigate with the terminal to the folder of your project.
+2. Run `pixi init` to create a new Pixi workspace.
+3. Include the packages that are needed for that project by `pixi add <package name>`, e.g. `pixi add numpy`. [^pypi]
+4. Start your task by running `pixi run <task>`, e.g. `pixi run jupyter lab`.
+
+[^pypi]: Note that some packages are only available through pypi, these can be included using `pixi add --pypi <package name>`
+
+An option is to create tasks in your `pixi.toml` file, e.g. the task `start` which then starts the IDE.
+
+
+### Working with and in a terminal
+The terminal is a 'tool' that lets you interact with your computer through the so called command line. 
+
 The terminal in Visual Studio Code (VSC) is a tool that lets you interact with your computer's command line directly within the editor. It's used to run commands, scripts, or programs without leaving the coding environment. For example, you can compile code, run a development server, install dependencies, or manage files. It's very helpful for developers because it allows you to code and execute commands in one place, streamlining your workflow.
 
 ```{figure} Figures/VSCterminal.PNG
@@ -63,6 +79,11 @@ width: 80%
 ---
 The VSC terminal to interact with the computer using the command line
 ```
+
+## VSC
+A popular code editor is [Visual Studio Code](https://code.visualstudio.com/). It allows you to program in different languages, where it recognizes the commands in that language and adjusts the FONT so that it becomes better readable. Moreover, it allows you to install various packages (such as Jupyter Notebook). It also integrates GIT and allows to code using Co-Pilot, an AI pair programmer. We advise to use VSC as it allows for multiple programming languages. 
+
+
 
 
 
