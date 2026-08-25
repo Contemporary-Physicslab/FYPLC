@@ -6,12 +6,12 @@
 (software)=
 ## Software
 
-In this course you'll learn to work with Python using Jupyter Notebooks. In order to work with Python and Jupyter Notebooks, you'll need some software to open and run the files. Installing the software and all dependencies (packages) can be quite some work. However, we'll work with a package manager called Pixi. Pixi helps to install the software and dependencies and allows for others to run your scripts if you provide the associate .toml file (no worries if you don't understand yet).  
+In this course you'll learn to work with Python using Jupyter Notebooks. In order to work with Python and Jupyter Notebooks, you'll need some software to open and run the files. Installing the software and all dependencies (packages) can be quite some work if done one-by-one. However, we'll work with a package manager called Pixi. Pixi helps to install the software and dependencies and allows for others to run your scripts if you provide the associate .toml file (no worries if you don't understand yet).  
 
 We also encourage you to install [Visual Studio Code](https://code.visualstudio.com/), which is a popular code editor. It allows you to program in different languages, where it recognizes the commands in that language and adjusts the FONT so that it becomes better readable. Moreover, it allows you to install various packages (such as Jupyter Notebook). It also integrates GIT and allows to code using Co-Pilot, an AI pair programmer. 
 
 ### Jupyter Notebook and Jupyter Lab
-In this course we make use of .ipynb files which are Jupyter Notebooks. To run these notebooks we can use integrated development environments (IDE's) as *Jupyter Notebook* or *Jupyter Lab*. Jupyter Notebook is a web-based interface that allows users to create and share documents with live code, visualizations, and narrative text in a linear format. JupyterLab, on the other hand, is a more advanced interface offering a flexible and modular environment with multiple panels, including notebooks, terminals, and text editors, providing a more versatile experience for interactive computing. I prefer to use Jupyter lab.
+In this course we make use of .ipynb files which are Jupyter Notebooks. To run these notebooks we can use integrated development environments (IDE's) as *Jupyter Notebook* or *Jupyter Lab*. Jupyter Notebook is a web-based interface that allows users to create and share documents with live code, visualizations, and narrative text in a linear format. JupyterLab, on the other hand, is a more advanced interface offering a flexible and modular environment with multiple panels, including notebooks, terminals, and text editors, providing a more versatile experience for interactive computing. I prefer to use Jupyter lab - and that is thus the one we will be working with in this course.
 
 ```{figure} Figures/jupyterlab.PNG
 ---
@@ -24,9 +24,7 @@ The Jupyter lab IDE
 (installation_steps)=
 ## Installation steps
 1. Go to [Pixi's website](https://pixi.prefix.dev/latest/installation/) and install pixi on your machine.
-2. Go to [VSC's website](https://code.visualstudio.com/) and install VSC on your machine.
-3. Go to [git's website](https://git-scm.com/install/) and install git on your machine.
-4. Download the [course files](https://github.com/Contemporary-Physicslab/FYPLC/archive/refs/heads/main.zip) and unzip it in a folder called `FYPLC`.
+2. Download the [course files](https://github.com/Contemporary-Physicslab/FYPLC/archive/refs/heads/main.zip) and unzip it in a folder called `FYPLC` (preferably in `TN/1ejaar/IP/FYPLC`).
 
 By now you have everything that you need. Pixi will take care of the installation of the software.
 
@@ -67,10 +65,8 @@ We derive the steps below from [pixi's own manual](https://pixi.prefix.dev/lates
 An option is to create tasks in your `pixi.toml` file, e.g. the task `start` which then starts the IDE.
 
 
-### Working with and in a terminal
-The terminal is a 'tool' that lets you interact with your computer through the so called command line. 
-
-The terminal in Visual Studio Code (VSC) is a tool that lets you interact with your computer's command line directly within the editor. It's used to run commands, scripts, or programs without leaving the coding environment. For example, you can compile code, run a development server, install dependencies, or manage files. It's very helpful for developers because it allows you to code and execute commands in one place, streamlining your workflow.
+## Working with and in a terminal
+The terminal is a 'tool' that lets you interact with your computer through the so called command line. It is used to run commands, scripts, or programs without leaving the coding environment. For example, you can compile code, run a development server, install dependencies, or manage files. It's very helpful for developers because it allows you to code and execute commands in one place, streamlining your workflow.
 
 ```{figure} Figures/VSCterminal.PNG
 ---
@@ -79,41 +75,6 @@ width: 80%
 ---
 The VSC terminal to interact with the computer using the command line
 ```
-
-## VSC
-A popular code editor is [Visual Studio Code](https://code.visualstudio.com/). It allows you to program in different languages, where it recognizes the commands in that language and adjusts the FONT so that it becomes better readable. Moreover, it allows you to install various packages (such as Jupyter Notebook). It also integrates GIT and allows to code using Co-Pilot, an AI pair programmer. We advise to use VSC as it allows for multiple programming languages. 
-
-
-
-
-
-### Extensions
-Extensions in Visual Studio Code (VSC) are powerful add-ons that enhance the functionality of the editor by providing additional features, tools, and support for various programming languages, frameworks, and technologies. Extensions allow you to customize and tailor VSC to suit your specific development needs.
-
-#### How to Install Extensions:
-- Access Extensions View:
-    * Click on the Extensions icon in the Activity Bar on the side (or press Ctrl+Shift+X / Cmd+Shift+X).
-
-- Search for Extensions:
-    * In the Extensions view, you can search for the name or keywords related to the extension you want to install.
-
-- Install the Extension:
-    * Click the Install button on the desired extension, and it will automatically be added to VSC.
-
-- Manage Installed Extensions:
-    * You can view, enable, disable, or uninstall extensions from the same Extensions view.
-
-#### Popular Extensions in VSC:
-* Python: Provides linting, debugging, IntelliSense, and more for Python development.
-* Jupyter: Provides support for Jupyter notebooks within VSC.
-* Arduino: Provides support for programming in Arduino.
-* Code Spell Checker: Has a great spelling checker, also available for Dutch
-* Github Copilot: Your AI pair programmer. Helps you in writing code.
-* LaTeX workshop: LaTeX coding, preview, compiling.
-* MyST-Markdown: The official Markdown syntax extension
-
-
-
 
 ````{admonition} Using the command line
 :class: dropdown
@@ -124,7 +85,7 @@ When you run the command `dir` it returns the folders and files in the folder yo
 ```{figure} Figures/terminaldir.PNG
 ---
 name: fig_terminaldir
-width: 70%
+width: 100%
 ---
 Moving through your folder with the command line
 ```

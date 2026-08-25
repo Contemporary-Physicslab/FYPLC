@@ -2,7 +2,7 @@
 
 In this repository, you can find the source code of the material developed for an introduction to Python for physicists that runs as a "minicourse" of 1.5 ECTS as part of the "First Year Physics Lab Course" of the Applied Physics program at TU Delft.
 
-The course consists of 6 core Jupyter notebooks, and additional materials, designed for self-study. The notebooks are self-contained, and include an explanation of the concepts, example code to illustrate the concepts, and exercises (with answers at the end) for testing your knowledge. There are an additional two notebooks with extra material: Notebook 7 for the curious student wanting to learn about building GUI's, and notebook 8 with a few extra practice exercises for students wanting more practice material. Below an overview of what is in each notebook.
+The course consists of 6 core Jupyter notebooks, and additional materials, designed for self-study. The notebooks are self-contained, and include an explanation of the concepts, example code to illustrate the concepts, and exercises (with answers at the end) for testing your knowledge. Below an overview of what is in each notebook.
 
 | Notebook    | Description          | Type   |
 | ----------- | -----------          | ----- |
@@ -12,11 +12,9 @@ The course consists of 6 core Jupyter notebooks, and additional materials, desig
 | Notebook 4 | Scientific computing  | Core material |
 | Notebook 5 | Data analysis         | Core material |
 | Notebook 6 | Uncertainties         | Core material | 
-| Notebook 7 | GUI's                 | Addtional | 
-| Notebook 8 | Practice material     | Practice | 
 | Example exam | Example exam | old exam |
 
-The notebooks are designed for people with no programming background at all, and are used in the course during 8 afternoons (32  hours). By the end of the course, you should be familiar with:
+The notebooks are designed for people with no programming background at all, and are used in the course during 8 afternoons (32 hours). By the end of the course, you should be familiar with:
 
 * Basic concepts in Python: What is Python and how does it work
 * Functions in Python: How to write them and how to use them 
@@ -76,3 +74,6 @@ Redistribution and use in source and binary forms, with or without modification,
 * Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
 * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
 * Neither the name of TU Delft nor the names of contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+
+## Build locally
+This book and all its content can be downloaded and run locally. In the repository you will find a pixi.toml file. After downloading the repo and installing pixi, simply run `pixi run myst` from the root folder.

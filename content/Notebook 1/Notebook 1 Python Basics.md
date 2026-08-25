@@ -5,7 +5,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.19.4
+    jupytext_version: 1.19.5
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
@@ -25,11 +25,10 @@ numbering:
 
 (NB1_pre)=
 ## Pre/Post-test
-This test is for testing your current skills in Python. You can use it in two ways:
-* **pre-test**: to test your skills beforehand. If you are already proficient in Python, and can do this test within approximately 15 minutes, you can scan through this notebook rather than carefully reading each sentence.
-* **post-test**: to test your skills after Notebook 1. Check whether you learned enough.
-
-If you have not done any programming before, you skip this test and use it as a post-test.
+> This test is for testing your current skills in Python. You can use it in two ways:
+> * **pre-test**: to test your skills beforehand. If you are already proficient in Python, and can do this test within approximately 15 minutes, you can scan through this notebook rather than carefully reading each sentence.
+> * **post-test**: to test your skills after Notebook 1. Check whether you learned enough.
+> If you have not done any programming before, you skip this test and use it as a post-test.
 
 **Fixing Python errors in a database**
 
@@ -65,12 +64,24 @@ Full_adress = Building[1] + Streetname[1] + Number[1]
 print(Full_adress)
 ```
 
-(NB1_learningobjectives)=
-## Learning objectives
+(NB1_Pyt_inthiscourse)=
+## Python in this course
 
 Python has become the standard programming language in physics research. To teach you the basics of programming (in Python) we have prepared six notebooks for you, each notebook focussing on a different aspect. The first three notebooks relate to the basics of programming. Notebook 4 and 5 relate to data-analysis in physics using Python. The last notebook focusses on the statistics related to measurement uncertainty.  
 
-In this course, you will work using a platform called "Jupyter Notebooks". Jupyter notebooks are a way to combine formatted text (like the text you are reading now), Python code (which you will use below), and the result of your code and calculations all in one place. Go through these notebooks and run the examples. Try to understand their functioning and, if necessary, add code (such as print statements or variable overviews) to make it clear for you. In addition, there are exercises and practice cells where you can program for yourself. Don't be afraid to start coding yourself: writing code and making mistakes is the best way to learn Python.
+In this course, you will work using a platform called "Jupyter Notebooks". Jupyter notebooks are a way to combine formatted text (like the text you are reading now), Python code (which you will use below), and the result of your code and calculations all in one place. 
+
+During the course, go through these notebooks and run the examples. Try to understand their functioning and, if necessary, add code (such as print statements or variable overviews) to make it clear for you. In addition, there are exercises and practice cells where you can (and should) program for yourself. Don't be afraid to start coding yourself: writing code and making mistakes is the best way to learn Python.
+
+It might be tempting to use genAI for writing the code for you, it is very good in doing so as it has 'stolen' the code of many projects to 'learn' what programming in Python is. However, remember:
+1. during the exam you don't have access to genAI
+2. the code produced by the AI may be much more complicated than needed
+3. if you don't understand the code, you are probably not able to fix it
+4. there is a basic level of understanding needed to proceed in this study
+5. it is SO MUCH MORE FUN TO DO IT YOURSELF!
+
+(NB1_learningobjectives)=
+## Learning objectives
 
 In this notebook, you will learn the basic concepts of programming in Python. To get started, we will first explain the basic concepts of what Python is and how it works. 
 
@@ -86,37 +97,31 @@ After completing this notebook, you are able to:
 * use list, tuples and np.arrays and understand the differences
 * combine arrays and insert data
 
-
 We have embedded various YouTube clips in the first notebooks, which are **NOT** required to watch (we even recommend to not look at these videos because these are time consuming!) but might provide additional help and information when necessary. The last two notebooks include prerecorded lectures that we recommend to watch.
 
-The solutions for the exercises in this notebook, and future ones, can be found at the bottom of the notebook, so that you can check your answer or have a peek if you are getting stuck. But don't look too quickly... thinking about how to solve a problem rather than solving it using the answers is much more educational!
+The solutions for the exercises in this notebook, and future ones, can be found in a seperate notebook. You can check your answer or have a peek if you are getting stuck. But don't look too quickly... thinking about how to solve a problem rather than solving it using the answers is much more educational!
 
 ```{iframe} https://www.youtube.com/embed/bxWrXhLFN2s
 ```
-
-+++
-
-(NB1_note)=
-## NOTE
-
-When programming in the browser, some of the exercise cannot be made. For instance, stopping and rerunning the kernel is not possible. Also, it is not possible to ask input from the user. Once you have installed the software, you can return to these exercises and try to run them again.
-
-Also, your code will be lost when programming in the browser. Write down the code you want to keep!
 
 +++ {"nbgrader": {"grade": false, "grade_id": "cell-e68e92ac1082dd04", "locked": true, "schema_version": 3, "solution": false, "task": false}}
 
 (NB1_whatis)=
 ## What is Python? And what are Jupyter Notebooks?
 
-Python is an [interpreted computer programming language](https://en.wikipedia.org/wiki/Interpreted_language) . Using Python, you can ask your computer to do specific things, like perform a calculation, draw a graph, load data from a file, or interact with the user. 
+Python is an [interpreted computer programming language](https://en.wikipedia.org/wiki/Interpreted_language). Using Python, you can ask your computer to do specific things, like perform a calculation, draw a graph, load data from a file, or interact with the user. 
 
-Every time you run Python, either by running it on the command line, or by running it in a Jupyter notebook like you are now, a Python **"kernel"** is created. This kernel is a copy of the Python program ("interpreter") that runs continuously on your computer (until you stop it).
+Every time you run Python, either by running it on the command line, or by running it in a Jupyter Notebook like you are now, a Python **"kernel"** is created. This kernel is a copy of the Python program ("interpreter") that runs continuously on your computer (until you stop it).
 
-Jupyter notebooks are a way to interact with the Python kernel. Notebooks are divided up into "cells", which can be either a text cell (in a special text formatting language called [markdown](https://en.wikipedia.org/wiki/Markdown), like the one you are reading now. There are also code cell  (containing your code), like the cell below it. 
+Jupyter Notebooks are a way to interact with the Python kernel. Notebooks are divided up into "cells", which can be either a `text cell` (in a special text formatting language called [markdown](https://en.wikipedia.org/wiki/Markdown), like the one you are reading now. There are also `code cells` (containing your code), like the cell below it. 
 
-The selected cell is surrounded by a box. If you press "ENTER" in a text cell you can start editing the cell. If you push "Run" above, or push "Shift-Enter", the code will be "run". If it is a code cell, it will run a command (see below). If it is a markdown cell, it will "compile" the markdown text language into formatted (HTML) text. 
+The selected cell is surrounded by a box. If you press `ENTER` in a text cell you can start editing the cell. If you push `Run` above, or push `Shift-Enter`, the code will be "run". If it is a code cell, it will run a command (see below). If it is a markdown cell, it will "compile" the markdown text language into formatted (HTML) text. 
 
 You can give commands to this kernel by typing commands using the Python language into the code cells of the notebook. Here, you can find an example of a code cell that contains a simple Python command `print`, which prints a text string to the command line.
+
+```{code-cell} ipython3
+print('Hello world')
+```
 
 +++ {"nbgrader": {"grade": false, "grade_id": "cell-ee6ac0827c6a6783", "locked": true, "schema_version": 3, "solution": false, "task": false}}
 
@@ -128,8 +133,11 @@ To send this command to the Python kernel, there are several options. First, sel
 
 When you run the cell, the code will be sent to the Python kernel, which will translate your Python command into a binary language your computer CPU understands, send it to the CPU, and read back the answer. If the code you run produces an "output", meaning that the kernel will send something back to you, then the output that your code produces will be displayed below the code cell in the "output" section of the code cell. This is a scheme of what this process looks like "behind the scenes": 
 
-```{figure} Notebook_1_behind_the_scenes.png
+```{figure} figures/Notebook_1_behind_the_scenes.png
 :width: 50%
+:label: NB1_behind_scenes
+
+How the Python kernel 'works'
 ```
 
 After you have run the code cell, a number will appear beside your code cell. This number tells you in which order that piece of code was sent to the kernel. Because the kernel has a "memory", as you will see in the next section, this number can be useful so that you remember in which order the code cells in your notebook were executed. 
@@ -178,7 +186,7 @@ a = 5
 
 In Python, the `=` symbol represents the **assignment operator**: it is an instruction to **assign** the value of `5` to the variable `a`. If variable `a` already exists, it will be over-written with the new value (in fact, `a` is a Python object). If variable `a` does not yet exist, then Python will create a new variable for you automatically.
 
-For you, the cell above will create a "variable" named `a` in memory of the Python kernel that has the value of 5. We can check this by printing the value of a:
+For you, the cell above will create a "variable" named `a` in memory of the Python kernel that has the value of `5`. We can check this by printing the value of a:
 
 ```{code-cell} ipython3
 print(a)
@@ -186,7 +194,7 @@ print(a)
 
 +++ {"nbgrader": {"grade": false, "grade_id": "cell-99b80d998fcc74ff", "locked": true, "schema_version": 3, "solution": false, "task": false}}
 
-Besides numerical values variables can also be strings, which are sequences of characters. You make a string by putting the text between quotes, as seen above in "Hello World".
+Besides numerical values variables can also be strings, which are sequences of characters. You make a string by putting the text between quotes, as seen above in "Hello world".
 
 Note that we can also add a message if we add a string and a numerical value in the `print()` statement by combining things with commas:
 
@@ -209,16 +217,18 @@ Combine multiple strings and numerical values in a single `print` statement usin
 
 ```{exercise}
 :label: NB1_change_a 
-Change the value of `a` to 7 by executing the following cell, and then re-run the **above** cell containing the command `print(a)` (the one with output `5`). What value gets printed now in that cell?  
+Change the value of `a` to 7 by executing the following cell, and then re-run the **above** cell containing the command `print(a)` (the one with output `5`). 
+
+What value gets printed now in that cell?  
 ```
 
 ```{code-cell} ipython3
-# your code here
+a = 7
 ```
 
 +++ {"nbgrader": {"grade": false, "grade_id": "cell-2b713ce46a7bca48", "locked": true, "schema_version": 3, "solution": false, "task": false}}
 
-As you can see in notebooks that the location of your code doesn’t matter, but the order in which you execute them does!!
+As you can see in notebooks that the location of your code doesn’t matter, but the order in which you execute them does!! Note that this is very confusing for people who have worked in .py files rather than notebook files.
 
 We can also use variables to set the values of other variables:
 
@@ -266,10 +276,23 @@ When we execute `a += 1`, Python calculates the result, which is `2`. Because th
 
 Therefore, `a` now points to a different object (`2`), while `b` continues to point to the original object (`1`). As a result, changing `a` does not affect `b`.
 
-Now let's see what happens with a mutable object, like a `list`.
+```{code-cell} ipython3
+a = 1
+print('id a:', id(a))
+b = a
+print('id b:', id(b))
+a += 1
+print('id a:', id(a))
+print('id b:', id(b))
+print(b)
+```
+
+Now let's see what happens with a mutable object, like a `list` (a series of variables).
 
 ```{code-cell} ipython3
 list_a = [1, 2]
+print(list_a)
+
 list_b = list_a
 list_a.append(3)
 print(list_b)
@@ -308,7 +331,7 @@ d = 15.5
 
 +++ {"nbgrader": {"grade": false, "grade_id": "cell-bea496517f99df02", "locked": true, "schema_version": 3, "solution": false, "task": false}}
 
-In this case the variables' names are displayed, their values, but also their type. Type defines the format in which a variable is stored in memory. In this case `int` stands for integer and `float` stands for floating point number, which is the usual way in which real numbers are stored in a computer. We will learn more about Python variable types below.
+In this case the variables' names are displayed, their values, but also their _type_. _Type_ defines the format in which a variable is stored in memory. In this case `int` stands for integer and `float` stands for floating point number, which is the usual way in which real numbers are stored in a computer. We will learn more about Python variable types below.
 
 +++ {"nbgrader": {"grade": false, "grade_id": "cell-80d1461986f4d365", "locked": true, "schema_version": 3, "solution": false, "task": false}}
 
@@ -331,12 +354,14 @@ For this, there is both a menubar "Kernel" at the top, along with two useful but
 * "Stop": tells the kernel to abort trying to run the code it is working on, but does not erase its memory
 * "Restart": "kill" the kernel (erasing its memory), and start a new one attached to the notebook.
 
-```{figure} Notebook_1_stop_button.png
+```{figure} figures/Notebook_1_stop_button.png
 :width: 20%
+:label: NB1_stop
 ```
 
-```{figure} Notebook_1_restartkernelmenu.png
+```{figure} figures/Notebook_1_restartkernelmenu.png
 :width: 60%
+:label: NB1_restart
 ```
 
 To see this in action, you can execute the following cell, which will do nothing other than wait for one minute:
@@ -358,6 +383,17 @@ List the stored variables using the `%whos` command. Subsequently, restart the k
 ```{code-cell} ipython3
 # your code here
 ```
+
+````{important}
+When you run the Python code, the variables are stored. For this notebook that isn't much of a problem, but if you run a large projects this can take up much MB's. You don't want to store these - especially not with a version control system that often allows a maximum of 100 MB per commit. Hence, you'll have to 'clean' the memory. You do this by clicking on `Kernel` and click `Restart kernel and clear all outputs`.
+
+```{figure} figures/Notebook_1_clear_output.png
+:alt: showing how to clear the notebooks output
+:label: NB1_clearoutput
+
+Clear the output to save memory.
+```
+```` 
 
 +++ {"nbgrader": {"grade": false, "grade_id": "cell-fd74d0d65cf02f0a", "locked": true, "schema_version": 3, "solution": false, "task": false}}
 
@@ -398,6 +434,10 @@ c = 1.5e-8
 +++ {"nbgrader": {"grade": false, "grade_id": "cell-9f4aa0b51687698a", "locked": true, "schema_version": 3, "solution": false, "task": false}}
 
 The notation `1.5e-8` is a notation used in python to indicate the number $1.5 \times 10^{-8}$.
+
+```{warning}
+Use this way of notation of powers of 10 rather than `1*10^-8` as we see many mistakes in the latter approach.
+``` 
 
 A third type of mathematical variable type that you may use in physics is a complex number. In Python, you can indicate a complex number by using `1j`, which is the Python notation for the complex number $i$:
 
@@ -460,7 +500,7 @@ Discover what the `+` operator does to a string, i.e. print the output of the su
 
 +++ {"nbgrader": {"grade": false, "grade_id": "cell-1fa7be3de8eb7f5a", "locked": true, "schema_version": 3, "solution": false, "task": false}}
 
-A useful variable type we will introduce here is the "boolean" type `bool`. A boolean variable can have two values: `True` or `False`. You type them in directly as `True` and `False` with no quotes (you will see them turn green).
+A useful variable type we will introduce here is the "boolean" type `bool`. A boolean variable can have two values: `True` equivalent to `1` or `False` equivalent to `0`. You type them in directly as `True` and `False` with no quotes (you will see them turn green).
 
 ```{code-cell} ipython3
 g = False
@@ -494,24 +534,12 @@ Also, useful to know: numbers (both `int` and `float`) can also be used in True 
 
 ```{exercise}
 :label: NB1_numbers 
-Discover which *numbers* can be used as `True` and `False` in Python by changing the value of `g` above and re-running the cells.
+Discover which (other) *numbers* can be used as `True` and `False` in Python by changing the value of `g` above and re-running the cells.
 ```
 
 ```{code-cell} ipython3
-
+# Your code here
 ```
-
-<div style="width:75%; margin:0 auto;">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/khKv-8q7YmY?si=xuqTRiY9S-0SDe8g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
-
-+++
-
-<div style="width:75%; margin:0 auto;">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/W8KRzm-HUcc?si=Y7FuNiikMHbZIazj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
-
-+++
 
 (NB_tuples)=
 ### Lists & Tuples
@@ -530,14 +558,14 @@ print(Person_1)
 print(type(Person_1), type(Person_1[0]), type(Person_1[3]))
 ```
 
-It is interesting to see that Person_1 is a list and that within the list other types exist (Note: the first item is referred to by 0 as computers start to count at 0). If we make a mistake, we can replace an item in the list.
+It is interesting to see that Person_1 is a **list** and that within the list other types exist (Note: the first item is referred to by 0 as computers start to count at 0). If we make a mistake, we can replace an item in the list.
 
 ```{code-cell} ipython3
 Person_1[0] = 'Freek'
 print(Person_1)
 ```
 
-Another way we can store data is using a tuple, see below. Note that the only difference with a list is the use of the brackets.
+Another way we can store data is using a **tuple**, see below. Note that the only difference with a list is the use of the brackets.
 
 ```{code-cell} ipython3
 Person_2 = ('Erik','Janssen','Lorentzweg',1,'Delft')
@@ -557,7 +585,7 @@ For example, if we try to modify a list through a second variable:
 
 ```{code-cell} ipython3
 a = [2,3,4]
-b = a # Both 'a' and 'b' point to the same list
+b = a        # Both 'a' and 'b' point to the same list
 b[0] = -10
 print(a)
 ```
@@ -590,11 +618,11 @@ print(b[0]*2)
 
 ```{exercise}
 :label: NB1_lista
-Try to change the first value of **b**. In order to do so, make sure **b** becomes a list! You can make use of b = list(a).
+Try to change the first value of **b**. In order to do so, make sure **b** becomes a list! You can make use of `b = list(b)`.
 ```
 
 ```{code-cell} ipython3
-
+# Your code here
 ```
 
 (NB1_np_arr)=
@@ -614,11 +642,9 @@ The first four are very simple data types, but actually the last one is more com
 
 Here, we will introduce a new datatype that is handy for Physics calculations and that comes from the Python software package [numpy](https://numpy.org) called **numpy arrays**.
 
-*What are numpy arrays?*
+**What are numpy arrays?**
 
-Numpy arrays are a way to work in Python with not just single numbers, but a whole bunch of numbers. With numpy arrays these numbers can be manipulated just like you do in, for example, linear algebra when one works with vectors:
-
-https://en.wikipedia.org/wiki/Row_and_column_vectors
+Numpy arrays are a way to work in Python with not just single numbers, but a whole bunch of numbers. With numpy arrays these numbers can be manipulated just like you do in, for example, linear algebra when one works with [vectors](https://en.wikipedia.org/wiki/Row_and_column_vectors).
 
 For example, a (column) vector $\vec{a}$ with 5 entries might look like this:
 
@@ -632,7 +658,7 @@ $$
 \end{bmatrix}
 $$
 
-In linear algebra you are used to manipulate these vectors, this can be done in a similar way with numpy arrays. We will use numpy arrays extensively in Python as vectors, like above, but also for storing, manipulating, and analyzing datasets (like a column of an excel spreadsheet). 
+Later, in linear algebra you will get used to manipulate these vectors. Manipulating vectors can be done in a similar way with numpy arrays. We will use numpy arrays extensively in Python as vectors, like above, but also for storing, manipulating, and analyzing datasets (like a column of an excel spreadsheet). 
 
 To use numpy arrays, we first need to import the numpy library, which we will do using the shortened name "np" (to save typing):
 
@@ -668,16 +694,20 @@ Make a list and a numpy array in which the values 2, 3, 5 are stored. Multiply t
 ```
 
 ```{code-cell} ipython3
-#your code
+# Your code here
 ```
 
-In some cases we want to add items to our array or combine different arrays into a single one. There are different ways to do that. To combine two numpy arrays, we can make use of the concatenate function. To add items at the end of our array, we can use the append function.
+In some cases we want to add items to our array or combine different arrays into a single one. There are different ways to do that. To combine two numpy arrays, we can make use of the `concatenate function`. To add items at the end of our array, we can use the append function.
 
 ```{code-cell} ipython3
 a = np.array([1,2,3,4,5])
 a = np.append(a,6)
+print('a= ', a)
+
 b = np.array([6,7,8,9,10])
 b = np.delete(b,0)
+print('b= ', b)
+
 c = np.concatenate((a,b))
 c = np.append(c,11)
 print(c)
@@ -693,7 +723,8 @@ even_nr = np.arange(0,10,2)
 print(even_nr)
 odd_nr = np.arange(1,11,2)
 print(odd_nr)
-#your code
+
+# Your code here
 ```
 
 +++ {"nbgrader": {"grade": false, "grade_id": "cell-c1323d47dae023f1", "locked": true, "schema_version": 3, "solution": false, "task": false}}
@@ -727,7 +758,7 @@ print(a)
 print(b)
 ```
 
-There seems to be something odd happening here, as when we round to the first decimal number **a** and **b** obtain the same value. Why this happens is covered in the last two notebooks. It has to do with always rounding down or up results in a systematic error in the mean.
+There seems to be something odd happening here, as when we round to the first decimal number **a** and **b** obtain the same value. Why this happens is covered in notebook 6. It has to do with always rounding down or up results in a systematic error in the mean.
 
 ```{code-cell} ipython3
 print(type(b))
@@ -1030,7 +1061,7 @@ After your code cell, you will see some colored text called a "Traceback". This 
 
 Let's take a look at the traceback:
 
-```{figure} Notebook_1_anatomy_of_an_error.png 
+```{figure} figures/Notebook_1_anatomy_of_an_error.png 
 :width: 60%
 ```
 
