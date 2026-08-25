@@ -393,7 +393,7 @@ When you run the Python code, the variables are stored. For this notebook that i
 
 Clear the output to save memory.
 ```
-```` 
+````
 
 +++ {"nbgrader": {"grade": false, "grade_id": "cell-fd74d0d65cf02f0a", "locked": true, "schema_version": 3, "solution": false, "task": false}}
 
@@ -436,7 +436,7 @@ c = 1.5e-8
 The notation `1.5e-8` is a notation used in python to indicate the number $1.5 \times 10^{-8}$.
 
 ```{warning}
-Use this way of notation of powers of 10 rather than `1*10^-8` as we see many mistakes in the latter approach.
+Use this way of notation of powers of 10 rather than `1*10**-8` as we see many mistakes in the latter approach.
 ``` 
 
 A third type of mathematical variable type that you may use in physics is a complex number. In Python, you can indicate a complex number by using `1j`, which is the Python notation for the complex number $i$:
@@ -848,10 +848,10 @@ b=
 
 So far we have not talked about the names of variables. Throughout the notebook we used *a* and *b* for single variables, list, numpy arrays and so on. Each time the previous value is overwritten. Furthermore, what does *a* refers to? Is it acceleration, is it a test variable? We have no clue.
 
-If you want to be able to read your code next year, or if you want us to be able to read your code, you have to come up with proper names for your variables. We advice you to look at the YT-movie clip below as some conventions are clearly elaborated. Also, look at the PEP 8 -- Style Guide for Python Code: https://www.python.org/dev/peps/pep-0008/
-for more related tips and conventions.
+If you want to be able to read your code next year, or if you want us to be able to read your code, you have to come up with proper names for your variables. We advice you to look at the YT-movie clip below as some conventions are clearly elaborated. Also, look at the [PEP 8 -- Style Guide for Python Code](https://www.python.org/dev/peps/pep-0008/) for more related tips and conventions.
 
 ```{iframe} https://www.youtube.com/embed/Uw95Uc3xgWU?si=xgfUC4-DxmYbMfmB
+
 ```
 
 +++ {"nbgrader": {"grade": false, "grade_id": "cell-d453c295a6954f9d", "locked": true, "schema_version": 3, "solution": false, "task": false}}
@@ -945,14 +945,16 @@ In addition, we can also send stuff to Python. Often in physics, we do this by h
 ```{code-cell} ipython3
 a = input()
 
-print()
 print("The input was:")
 print(a)
 ```
 
 +++ {"nbgrader": {"grade": false, "grade_id": "cell-84fd218d798174b7", "locked": true, "schema_version": 3, "solution": false, "task": false}}
 
-Here something seemingly odd happens: even if we type a number into the input box, it will *always* return a string variable of type `str`:
+Here something seemingly odd happens: 
+```{important}
+even if we type a number into the input box, it will *always* return a string variable of type `str`:
+```
 
 ```{code-cell} ipython3
 type(a)
@@ -969,7 +971,7 @@ print("\nThe value of a is:", a)
 print("a has the type:", type(a))
 ```
 
-A very useful tool is string formatting (https://realpython.com/python-string-formatting/). We can tell Python that a number is comming, specify its type and later include the number:
+A very useful tool is [string formatting](https://realpython.com/python-string-formatting/). We can tell Python that a number is comming, specify its type and later include the number:
 
 ```{code-cell} ipython3
 print('The number given by the use is %.1f ' %a) #prints 1 dec float
@@ -996,7 +998,7 @@ Use the `input` function to get parameters of integer, float and string format i
 
 Computer programmers often forget things, and often they forget what variables they have defined. Also, computer programmers always like to save typing if they can. 
 
-For this reason, the people who made Jupyter notebooks included a handy feature called "TAB completion" (which is actually something that has been around for [a long time](https://en.wikipedia.org/wiki/Command-line_completion) in unix and ms-dos command line environments). 
+For this reason, the people who made Jupyter Notebooks included a handy feature called "TAB completion" (which is actually something that has been around for [a long time](https://en.wikipedia.org/wiki/Command-line_completion) in unix and ms-dos command line environments). 
 
 The idea is that if you start typing part of the name of a variable or part of the name of a function, and then push the `TAB` key, Jupyter will bring up a list of the variable and function names that match what you have started to type. If only one matches, it will automatically type the rest for you. If multiple things match, it will offer you a list: you can either keep typing until it's unique and press TAB again, or you can use the cursor keys to select the one you want.
  
@@ -1063,6 +1065,10 @@ Let's take a look at the traceback:
 
 ```{figure} figures/Notebook_1_anatomy_of_an_error.png 
 :width: 60%
+:label: NB1_error
+:alt: printscreen of an errormessage
+
+Anatomy of an errormessage
 ```
 
 The traceback contains three important details that can help you:
@@ -1155,7 +1161,7 @@ Try **?%whos** below and see what information is given.
 ```
 
 ```{code-cell} ipython3
-#your code here
+# Your code here
 ```
 
 ```{exercise}
@@ -1164,5 +1170,5 @@ Make a variable and an array. Use the second tool to find out what actions can b
 ```
 
 ```{code-cell} ipython3
-#your code here
+# Your code here
 ```

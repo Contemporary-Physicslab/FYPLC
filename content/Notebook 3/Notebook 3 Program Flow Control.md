@@ -26,12 +26,12 @@ numbering:
 
 (NB3_test)=
 ## Pre/Post-test
-This test is for testing your current skills in Python. You can use it in two ways:
-* pre-test: to test your skills beforehand. If you are already proficient in Python, and can do this test within approximately 15 minutes, you can scan through the notebook rather than carefully reading each sentence.
-* post-test: to test your skills after Notebook 3. Check whether you learned enough.
+> This test is for testing your current skills in Python. You can use it in two ways:
+> * **pre-test**: to test your skills beforehand. If you are already proficient in Python, and can do this test within approximately 15 minutes, you can scan through the notebook rather than carefully reading each sentence.
+> * **post-test**: to test your skills after Notebook 3. Check whether you learned enough.
 
-**Including password protection**<br>
-Although the supervisors are impressed by the work Eric is doing, his co-workers are not as happy by the quick progress Eric is making. Due to the large number of error messages in his code recently, he is convinced someone is messing with his code... Therefore he decides to write a program that asks the user to enter the password and checks whether it is correct. As a typo might occur, the user has three tries, after which the program should shut down. After every try tell the user whether the password is correct or not and how many tries are left. If the user has not provided the right passwork within the required number of attempts, provide a warning message.
+**Including password protection**  
+Although the supervisors are impressed by the work Eric is doing, his co-workers are not as happy by the quick progress Eric is making. Due to the large number of error messages in his code recently, he is convinced someone is messing with his code... Therefore he decides to write a program that asks the user to enter the password and checks whether it is correct. As a typo might occur, the user has three tries, after which the program should shut down. After every try, tell the user whether the password is correct or not and how many tries are left. If the user has not provided the right passwork within the required number of attempts, provide a warning message.
 
 Write the code.
 <!-- #endregion -->
@@ -69,18 +69,13 @@ A powerful concept in programming languages are pieces of code that allow you to
 
 In this section, we will look at some of the features of the Python language for conditional execution of your code. 
 
-
-<div style="width:75%; margin:0 auto;">
-    <iframe width="200" height="150" src="https://www.youtube.com/embed/DZwmZ8Usvnk" title="Python Tutorial for Beginners 6: Conditionals and Booleans - If, Else, and Elif Statements" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
-
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-820ab9eec85e7818", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
 (NB3_if)=
 ### The `if` statement
 
 We have already seen an example of the `if` statement in the previous notebook. The syntax of the if statement is as follows: 
 
-```
+```{code-cell} python
 if expression:
     code block to be executed if the expression is "True"
 ```
@@ -112,7 +107,7 @@ if not False:
 
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-8f5002353d747ef9", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
 ```{exercise}
-:label: NB3_
+:label: NB3_ex_con_stat
 Try out the following conditional statements, filling in the values specified to replace the `---` in the code cells.
 
 Check if the integer `1` is true:
@@ -166,7 +161,7 @@ if ---:
 (NB3_comp)=
 ### Comparison and test operators
 
-In the above, the `expression` in the `if` statements were all directly values that are either True or False (except for the example of `not False`). 
+In the above, the `expression` in the `if` statements were all directly values that are either `True` or `False` (except for the example of `not False`). 
 
 More generally, however, the `expression` can also include comparisons. Some examples of numerical comparisons are given here below:
 <!-- #endregion -->
@@ -221,7 +216,7 @@ In addition to the `==` operator, there are also several other comparison operat
 
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-f6b4a7e98c6672e0", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
 ```{exercise}
-:label: NB3_
+:label: NB3_ex_operators
 Test the operators `<`, `>`, `>=`, `<=`, `!=` by trying them in an if statement with numerical values. 
 ```
 <!-- #endregion -->
@@ -256,9 +251,9 @@ if --- != ---:
 ### Logical operations
 
 Python also allows you to build the `expression` out of logical combinations of several conditions using the keywords `and`, `or`, and `not`. The value of these operators is as follows
-* `and` evaluates to True if both conditions are True
-* `or` evaluates to True if either condition is True
-* `not`evaluates to True if condition is not True
+* `and` evaluates to `True` if both conditions are `True`
+* `or` evaluates to `True` if either condition is `True`
+* `not`evaluates to `True` if condition is not `True`
 
 Below are a few examples. 
 <!-- #endregion -->
@@ -290,10 +285,10 @@ if 5 < 6 and 10 > 9:
 
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-8a0f0f9e5985f291", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
 ```{exercise}
-:label: NB3_
+:label: NB3_ex_try
 Try out the following examples using the if statement form from above for the conditions
 
-**(a)** Check if 5 is smaller than 6, AND 10 is smaller equal than 9:
+**(a)** Check if 5 is smaller than 6, AND 10 is smaller than or equal to 9:
 
 **(b)** Do you think that the statement `not False or True` evaluates to `True` or `False`? Try it out and see:
 ```
@@ -314,7 +309,7 @@ Try out the following examples using the if statement form from above for the co
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-a09e89673e9b20d3", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
 To understand what happened in part (b), we have to know if Python first performs the operation `False or True` or if it performs the operation `not False` first. The rules for which order Python does things, in can be found in the documentation for <a href=https://docs.python.org/3/reference/expressions.html#operator-precedence>operator precedence</a>. In the example above, we can see that the `not` operator had precedence and Python performed the `not` before it performed the `or`. 
 
-What if I wanted to have Python perform the `or` first? You do this by enclosing `True  or False` in brackets:
+What if I wanted to have Python perform the `or` first? You do this by enclosing `True or False` in brackets:
 <!-- #endregion -->
 
 ```python
@@ -331,7 +326,7 @@ In Python, you can combine the `if` statement with `elif` and `else` commands in
 
 `elif` (else if) is a command that allows you to check another condition if the condition of the starting `if` is `False`. Note that if the `if` criterion is `True`, the `elif` statement will be skipped and not checked. 
 
-`else` is a command that allows you to execute some code if all of the `if` and all the `elif`s are are `False`. 
+`else` is a command that allows you to execute some code if all of the `if` and all the `elif`s are `False`. 
 
 Note that to be part of the "chain", all the `elif`s and the last `else` must follow directly after each other's code blocks with no other code in between. And a new `if` always starts a new chain. 
 You can see how this works in the following examples:
@@ -377,9 +372,14 @@ else:
     print("none of these are the case")
 ```
 
+```{warning}
+It might be tempting to nest if statements to check the status of something. But if you need more than 4 nested if statements, try to do something else.
+```
+
+
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-ae510a3a63768c64", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
 ```{exercise}
-:label: NB3_
+:label: NB3_ex_filling_in
 Practice the use of the if-elif-else statement with the following exercise by filling in the missing conditional statements. You must use all three of `if`, `elif` and `else`. You also can not use the `end` operator.
 ```
 <!-- #endregion -->
@@ -401,6 +401,14 @@ check_number(10)
 check_number(15)
 ```
 
+```{exercise}
+:label: NB3_ex_internet
+Only if a consumer has a subscription, has paid, has a computer and has it turned the computer on, he will have access to internet. 
+
+Write a function that checks the conditions and only if all conditions have been satisfied it will print `Hello world`. In all other cases, return the error message.
+```
+    
+
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-636e6a2b17097f10", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
 (NB3_loops)=
 ## Loops
@@ -414,12 +422,12 @@ In Python there are two types of loops: `while` loops and `for` loops. We will l
 
 Using the `while` command, you can specify that a block of code gets executed over and over again until a certain condition is satified:
 
-```
+```{code-cell} python
 while expression:
     code...
 ```
 
-As long as `expression` is true, then the code block will be executed over and over again.
+As long as `expression` is `True`, then the code block will be executed over and over again.
 
 A simple example where we use a while loop to count to 10:
 <!-- #endregion -->
@@ -501,7 +509,7 @@ Note here I have also used a new operator `+=`: this is a special assignment ope
 
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-8419ddf039469350", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
 ```{exercise}
-:label: NB3_
+:label: NB3_ex_calc
 Write a function to calculate the factorial of a number using a while loop. The factorial, denoted with !, is the product of all numbers up to that number, i.e. $4!=1\cdot2\cdot3\cdot4$. Note that perhaps unexpectedly for you 0!=1 for which your function also have to give an answer.
 
 *If your code doesn't seem to stop running, you may need to "debug" your code to see where your mistake is (I did). A handy way to do this, for example, is to add a `print(i)` statement inside your while loop: it will enable you to see if the variable `i` is doing what you think it should be...*
@@ -523,7 +531,7 @@ print(factorial(0))
 
 The `for` loop is designed to execute a piece of code a fixed number of times. The syntax of the `for` loop is:
 
-```
+```{code-cell} python
 for i in (a, b, c, d, ...):
     code block
 ```
@@ -555,7 +563,7 @@ And that brings us to the range function...
 
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-2fa53e57cfc647d0", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
 ```{exercise}
-:label: NB3_
+:label: NB3_ex_sum_sin
 Calculate the sum $\sum_{i=0}^n\sin^2(i)$ for n=10 using a `for` loop.
 ```
 <!-- #endregion -->
@@ -567,7 +575,7 @@ for...:
 
 ### Enumerate
 
-Sometimes it might be usefull to obtain both the element and the index of an array or list. One tool that lets you do that is enumerate.
+Sometimes it might be useful to obtain both the element and the index of an array or list. One tool that lets you do that is `enumerate`.
 Enumerate works on every iterable (so on numpy arrays, lists, ...)
 
 ```python
@@ -576,11 +584,22 @@ for i, word in enumerate(A):
     print('index = ',i,'element = ',word)
 ```
 
+**Example**
+Below we have taken a sentence and have broken these down into a list of single words. We want to return the indeces of the words `useful`. Note that there are way better ways to do this. 
+
+
+```python
+sentence = ['Sometimes', 'it',  'might', 'be', 'useful', 'to', 'obtain', 'both', 'the','element', 'useful', 'and', 'the', 'index', 'of', 'an', 'array', 'or', 'list.', 'One', 'tool', 'that', 'lets', 'you', 'do', 'that', 'is', 'enumerate']
+for i, word in enumerate(sentence):
+    if word == 'useful':
+        print('the index of useful is ', i)
+```
+
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-58d187a8c4c8dc2e", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
 (NB3_range)=
 ### The range() function
 
-You can imagine that if we wanted to perform this sum up to 100, it would be very annoying to type out all of the numbers. For this, Python has a convenient function `range()`, than can automatically generate ranges of numbers for you!
+You can imagine that if we wanted to perform the sum up of all numbers from 0 to 100, it would be very annoying to type out all of the numbers. For this, Python has a convenient function `range()`, than can automatically generate ranges of numbers for you!
 
 The `range` function can be used in a couple of different ways, which we will look at here. We will see, however, that `range` does some funny things, which is related to the fact that Python "counts from zero" *(more on this later)*. 
 
@@ -642,13 +661,14 @@ Note that the `range` function works only with integers: `range(1,11,0.5)` is no
 
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-95d40298b2f365ae", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
 ```{exercise}
-:label: NB3_
-Calculate the sum of all numbers from 1 to 100 using a `for` loop with the `range()` function. Compare it to the famous value that Gauss calculated in class as an <a href=https://nrich.maths.org/2478>elementary school student</a>. 
+:label: NB3_ex_sum_1_to_100
+Calculate the sum of all numbers from 1 to 100 using a `for` loop with the `range()` function. Compare it to the famous value that Gauss calculated in class as an [elementary school student](https://nrich.maths.org/2478). 
 ```
 <!-- #endregion -->
 
 ```python
 # Your code here
+
 ```
 
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-3cf16acbe0d81ace", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
@@ -744,18 +764,19 @@ This is probably not a great example (if you are smart you can do this with less
 
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-10e1b8eed7f40b1c", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
 ```{exercise}
-:label: NB3_
+:label: NB3_ex_i
 Write code that creates a variable `i` with an initial value of zero. Use a while loop that increments `i` by one as long as `i` is less than one million. Have your loop stop if `i` satisfies the condition $i(i-10) = 257024$. Have your code print the `i` that satisfies this condition (if there is one). 
 ```
 <!-- #endregion -->
 
 ```python
 # Your code here
+
 ```
 
 ```{exercise}
-:label: NB3_
-In order to make sure that the seasons stay aligned with our calendars, leap years of 366 days have been introduced. A leap year is a year which is an integer multiple of 4 (except for years evenly divisible by 100, but not by 400),  https://en.wikipedia.org/wiki/Leap_year.   
+:label: NB3_ex_leap
+In order to make sure that the seasons stay aligned with our calendars, leap years of 366 days have been introduced. A [leap year](https://en.wikipedia.org/wiki/Leap_year) is a year which is an integer multiple of 4 (except for years evenly divisible by 100, but not by 400).   
 
 Make a function to check whether a certain year is a leap year using if/else statements to return True for leap years and False for normal years.
 ```
@@ -772,6 +793,10 @@ def leap_year(year):
 years = [1, 4, 100, 400, 2000, 2012, 2020, 2021, 2024, 2100]
 for year in years:
     print(year, leap_year(year))
+```
+
+```{note}
+We can check easily if our function works by making a testscript and make use of the `assert` function.
 ```
 
 ```python
@@ -791,7 +816,7 @@ np.testing.assert_array_equal(test, answercheck, 'error', True)
 ```
 
 ```{exercise}
-:label: NB3_
+:label: NB3_ex_peaks
 Sometimes we want to find the peaks in our data. One way to do this is to go through the array and check for every value if the values left and right are smaller.
 
 Write some code that finds the peak(s) of the array and that prints the index and value of all peaks.
@@ -806,7 +831,7 @@ y = np.array([2, 2, 3, 4, 5, 4, 3, 8, 6, 4])    # dummy data
 ```
 
 ```{exercise}
-:label: NB3_
+:label: NB3_ex_safety
 To keep your computer safe from others, it is probably password protected. Usually you have a few tries before the password entry is disabled for some time.
 
 You can enter your password three times before a timeout is given. If the timeout (sleep) is over, you have three other tries. The timeout time in seconds is given by $T = 60 + i^3$, where $i$ is the number of tries. 
