@@ -25,9 +25,9 @@ numbering:
 
 (NB4_test)=
 ## Pre/Post-test
-This test is for testing your current skills in Python. You can use it in two ways:
-* pre-test: to test your skills beforehand. If you are already proficient in Python, and can do this test within approximately 15 minutes, you can scan through the notebook rather than carefully reading each sentence.
-* post-test: to test your skills after Notebook 4. Check whether you learned enough.
+> This test is for testing your current skills in Python. You can use it in two ways:
+> * **pre-test:** to test your skills beforehand. If you are already proficient in Python, and can do this test within approximately 15 minutes, you can scan through the notebook rather than carefully reading each sentence.
+> * **post-test:** to test your skills after Notebook 4. Check whether you learned enough.
 
 **Calculating a derivative**
 Eric is asked to develop a tool for people that need to do some mathematical calculations. He is asked to write a function that calculates and plots the derivative of a given function. The derivative of a continuous function $f(x)$ can be approximated by $f'(x) = \frac{f(x+\epsilon)-f(x-\epsilon)}{2\epsilon}$ for some small value of $\epsilon$. As Eric knows that the derivative of $f(x) = \sin(x)$ is $f'(x) = \cos(x)$, he uses this function to test whether his function works correct.
@@ -39,7 +39,8 @@ Eric is asked to develop a tool for people that need to do some mathematical cal
 
 
 ```python
-### Your Code
+### Your code
+
 ```
 
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-33372ef05bccfcb0", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
@@ -178,7 +179,7 @@ print(a)
 
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-3dae75f8494e44f3", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
 ```{exercise}
-:label: NB4_
+:label: NB4_ex_first_arrays
 Set the first three, and the last two, entries of the following array to zero:
 ```
 <!-- #endregion -->
@@ -195,9 +196,9 @@ print(a)
 (NB4_slicing)=
 ###  Slicing numpy arrays
 
-Python sequences, inclduing NumPy arrays, also support a special type of indexing called "slicing" that does not just return a single element of an array, but instead returns a whole part of array. 
+Python sequences, including NumPy arrays, also support a special type of indexing called "slicing" that does not just return a single element of an array, but instead returns a whole part of array. 
 
-To do this, I put not just a single number inside my square brackets, but instead two numbers, separated by a colon `:`
+To do this, we put not just a single number inside a square brackets, but instead two numbers, separated by a colon `:`
 
 `a[n:m]` will return a view that consist of all the elements in `a`, starting at element `n` and ending at element `m-1`. 
 
@@ -338,7 +339,7 @@ NumPy `.copy()` makes a shallow copy of the `ndarray`, but since NumPy arrays us
 
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-8d1518c5eafa34e8", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
 ```{exercise}
-:label: NB4_
+:label: NB4_ex_slice
 Slicing can also be used to *set* multiple values in an array at the same time. Use slicing to set first 10 entries of the array below to zero in one line of code.
 ```
 <!-- #endregion -->
@@ -352,12 +353,12 @@ print(a)
 ```
 
 ```{exercise}
-:label: NB4_
+:label: NB4_ex_slice2
 The same exercise but now code in a smarter way.
 ```
 
 ```python
-#your code here 
+# Your code here 
 
 ```
 
@@ -365,7 +366,7 @@ The same exercise but now code in a smarter way.
 (NB4_math_op)=
 ###  Mathematical operations on arrays
 
-An advantage of using numpy arrays for scientific computing is the way they behave under mathematical operations. In particular, they very often do exactly what we would want them to do if they were a vector:
+An advantage of using Numpy arrays for scientific computing is the way they behave under mathematical operations. In particular, they very often do exactly what we would want them to do if they were a vector:
 <!-- #endregion -->
 
 ```python
@@ -396,9 +397,7 @@ print(a**2)
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-2963828a5132a24a", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
 What about if I multiply two vectors together? 
 
-In mathematics, if I multiply two vectors, what I get depends on if I use the "dot product" or the "outer product" for my multiplication:
-
-https://en.wikipedia.org/wiki/Row_and_column_vectors#Operations
+In mathematics, if I multiply two vectors, what I get depends on if I use the ["dot product" or the "outer product"](https://en.wikipedia.org/wiki/Row_and_column_vectors#Operations) for my multiplication.
 
 The "dot product" corresponds to multiplying a column vector by a row vector to produce a single number. The "outer product" (also called the "tensor product") corresponds to multiplying the column vector by the row vector to make a matrix. 
 
@@ -425,11 +424,19 @@ What if I actually want the dot product or the outer product? For that, Python h
 print(np.dot(a,a))
 ```
 
+```{tip}
+The dot product can also be calculated without the dot function from the Numpy library. The `@-operator` does the same.
+```
+
+```python
+print(a@a)
+```
+
 ```python
 print(np.outer(a,a))
 ```
 
-A useful mathematical operator is the cross product (https://en.wikipedia.org/wiki/Cross_product) where one calculates a vector which is perpendicular to vectors **x** and **y**. 
+A useful mathematical operator is the [cross product](https://en.wikipedia.org/wiki/Cross_product) where one calculates a vector which is perpendicular to vectors `x` and `y`. Note that you will come across this very often in physics course (even those parallel to this course).
 
 
 
@@ -437,6 +444,8 @@ A useful mathematical operator is the cross product (https://en.wikipedia.org/wi
 x = np.array([1,0,0])
 y = np.array([0,1,0])
 z = np.cross(x,y)
+print(z)
+print(x@y)
 ```
 
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-d29f4ba63452bfee", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
@@ -450,7 +459,7 @@ print(a>3)
 
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-8657218bbd2eabbc", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
 ```{exercise}
-:label: NB4_
+:label: NB4_ex_seq
 Generate a sequence of the first 20 powers of 2 in a numpy array (starting at $2^0$). 
 
 Your output should be an array $[2^0, 2^1, 2^2, 2^3, ...]$. 
@@ -460,7 +469,7 @@ Your output should be an array $[2^0, 2^1, 2^2, 2^3, ...]$.
 <!-- #endregion -->
 
 ```python
-# your code that makes the desired array
+# Your code here
 
 ```
 
@@ -468,7 +477,7 @@ Your output should be an array $[2^0, 2^1, 2^2, 2^3, ...]$.
 (NB4_func)=
 ## Functions for creating numpy arrays
 
-In numpy, there are also several handy functions for automatically creating arrays, see https://numpy.org/devdocs/reference/routines.array-creation.html. We provide some examples:
+In numpy, there are also several [handy functions for automatically creating arrays](https://numpy.org/devdocs/reference/routines.array-creation.html). We provide some examples:
 <!-- #endregion -->
 
 ```python
@@ -488,9 +497,7 @@ print(a)
 (NB4_lins)=
 ###  np.linspace
 
-To automatically generate an array with linearly increasing values you can use `np.linspace()`:
-
-https://docs.scipy.org/doc/numpy/reference/generated/numpy.linspace.html
+To [automatically generate an array with linearly increasing values](https://docs.scipy.org/doc/numpy/reference/generated/numpy.linspace.html) you can use `np.linspace()`:
 
 np.linspace takes three arguments: the starting number, the ending number, and the number of points.
 
@@ -519,7 +526,7 @@ print("Step size is: ", a[1]-a[0])
 
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-60d973103e7a78a9", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
 ```{exercise}
-:label: NB4_
+:label: NB4_ex_lin
 Generate an array that runs from -2 to 1 with 20 points using `linspace`.
 ```
 <!-- #endregion -->
@@ -557,18 +564,18 @@ print("Step size is: ", a[1]-a[0])
 ```
 
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-ab1a61494f1f5b33", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
-For this reason, I do not find myself using `np.arange()` very often, and mostly use `np.linspace()`. There are also several other useful functions, such as <a href=https://docs.scipy.org/doc/numpy/reference/generated/numpy.geomspace.html>np.geomspace()</a>, which produces geometrically spaced points (such that they are evenly spaced on a log scale). 
+For this reason, we not often use `np.arange()` very often, and mostly use `np.linspace()`. There are also several other useful functions, such as <a href=https://docs.scipy.org/doc/numpy/reference/generated/numpy.geomspace.html>np.geomspace()</a>, which produces geometrically spaced points (such that they are evenly spaced on a log scale). 
 <!-- #endregion -->
 
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-3a0d9465353f954b", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
 ```{exercise}
-:label: NB4_
+:label: NB4_ex_somearray
 Generate a numpy array that has a first element with value 60 and last element 50 and takes steps of -0.5 between the values. 
 ```
 <!-- #endregion -->
 
 ```python
-a = your code
+a = # Your code here
 print(a)
 ```
 
@@ -576,7 +583,7 @@ print(a)
 (NB4_random)=
 ###  Random numbers
 
-Numpy can also generate arrays of random numbers:
+Numpy can also generate arrays of random numbers. The code below will generate uniform random numbers on the range of 0 to 1 consisting of 40 elements, but there are also several other random number generator functions that can make [normally distributed](https://en.wikipedia.org/wiki/Normal_distribution) random numbers, or random integers, and more.
 <!-- #endregion -->
 
 ```python
@@ -584,13 +591,52 @@ a = np.random.random(40)
 print(a)
 ```
 
-<!-- #region nbgrader={"grade": false, "grade_id": "cell-624c748e1b750b24", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
-This will generate uniform random numbers on the range of 0 to 1, but there are also several other random number generator functions that can make <a href=https://en.wikipedia.org/wiki/Normal_distribution>normally distributed</a> random numbers, or random integers, and more.
-<!-- #endregion -->
+```{exercise}
+:label: NB4_ex_random_arr
+Look at the different arrays generated below, which are the same?
+```
+
+```python
+random_randint = np.random.randint(0,10,size=20)
+random_random = 10*np.random.random(size=20)
+random_uniform = np.random.uniform(0,10,size=20)
+random_normal = 10*np.random.normal(size=20)
+
+print(random_randint)
+print(random_random)
+print(random_uniform)
+print(random_normal)
+```
+
+We can better check this by looking at the values when plotted. 
+
+```{note} 
+We could even better their 'behaviour' if we would look at the histogram of each array. That is covered in the next notebook.
+```
+
+```python
+random_random = 10*np.random.random(size=100)
+random_uniform = np.random.uniform(0,10,size=100)
+random_normal = 10*np.random.normal(size=100)
+
+plt.figure()
+plt.subplot(131)
+plt.plot(random_random, 'k.')
+plt.title('random')
+
+plt.subplot(132)
+plt.plot(random_uniform, 'r.')
+plt.title('uniform')
+
+plt.subplot(133)
+plt.plot(random_normal, 'b.')
+plt.title('normal')
+plt.show()
+```
 
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-bf4eeb182ddf3fdf", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
 ```{exercise}
-:label: NB4_
+:label: NB4_ex_roundedgrade
 Generate a numpy array, `rounded_grades` that contains 300 random grades that have a distribution of a <a href=https://www.mathsisfun.com/data/standard-normal-distribution.html>bell-shaped curve</a> that might represent the final grades of the students in this course, with an average grade of 7.5 and a standard deviation of 1. Make sure your grades are rounded to a half point.
 
 (You may find it useful have to look at the help of the `np.random.normal()` function.
@@ -600,16 +646,16 @@ Generate a numpy array, `rounded_grades` that contains 300 random grades that ha
 <!-- #endregion -->
 
 ```python
-#Your code here that results in a numpy array rounded_grades
+# Your code here 
 ...some code...
 print(rounded_grades)
 ```
 
 ```{exercise}
-:label: NB4_
+:label: NB4_ex_hist
 There are various ways in which you can analyse your grade distribution.
 
-You can plot a <a href=https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.hist.html>histogram</a> of the grade distribution. Make sure that the width of our histogram bars is 0.5, corresponding to our rounded grades.
+You can plot a [histogram](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.hist.html) of the grade distribution. Make sure that the width of our histogram bars is 0.5, corresponding to our rounded grades.
 ```
 
 ```python
@@ -688,11 +734,7 @@ print(m[1:,1:])
 ```
 
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-6ab7d9e10575586d", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
-There are several functions for making matrices which you may find useful someday: 
-
-https://docs.scipy.org/doc/numpy/reference/routines.array-creation.html
-
-including this one which is used often:
+There are [several functions](https://docs.scipy.org/doc/numpy/reference/routines.array-creation.html) for making matrices which you may find useful someday, including this one which is used often:
 <!-- #endregion -->
 
 ```python
@@ -707,7 +749,7 @@ print(np.eye(10,k=-1))
 
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-484f34f51c8f8c5e", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
 ```{exercise}
-:label: NB4_
+:label: NB4_ex_matrix
 Use Python to calculate the following matrix multiplication: 
 
 $$
@@ -749,7 +791,7 @@ print()
 product = some code
 print(product)
 
-do nerd stuff if you want...
+# do nerd stuff if you want...
 ```
 
 We can do seemingly smart things using these 'special' vectors and matrices. For instance, what if we want to take the sum of all values in an array? We can use the dotproduct:
@@ -822,7 +864,7 @@ print("The cummulative sum is", cumsum)
 ```
 
 ```{exercise}
-:label: NB4_
+:label: NB4_ex_av
 
 Below we have a set of repeated measurements. We want to understand how the average value of our repeated measurements evaluates over time, that is, how does the average value change as function of $N$ repeated measurements? To investigate this: calculate and plot the average value as function of the number of measurements.
 ```
@@ -892,18 +934,14 @@ print((a**2)[i])
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-d520c5750ce4f54a", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
 Note also here that we used round brackets `()` around the `a**2` in the `print` statement to be able to then index the resulting array `a**2` array using square brackets `[]`. 
 
-You can find the full list of mathematical numpy functions on the documentation website:
+You can find the full list of mathematical numpy functions on the [documentation website](https://docs.scipy.org/doc/numpy/reference/routines.math.html)
 
-https://docs.scipy.org/doc/numpy/reference/routines.math.html
-
-and the full list of all functions in the reference guide: 
-
-https://docs.scipy.org/doc/numpy/reference/index.html
+and the full list of all functions in [the reference guide](https://docs.scipy.org/doc/numpy/reference/index.html)
 <!-- #endregion -->
 
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-081110b083e1eeb8", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
 ```{exercise}
-:label: NB4_
+:label: NB4_ex_skip
 
 **a)**
 Create an array with values ranging from 14 to 42, skipping the odd numbers.
@@ -914,7 +952,8 @@ Make an array `x` that runs from 0 to 4 with 20 points, and calculate an array `
 <!-- #endregion -->
 
 ```python
-your code to make the requested arrays x and y
+# Your code here
+
 print(y)
 ```
 
@@ -939,6 +978,7 @@ To show this quantitatively, we will use the `time` library to calculate the tim
 # 
 # We will use this to make a note of the starting time and the ending time, 
 # and then print out the time difference 
+
 from time import time
 
 # A pretty big array, 50 million random numbers
@@ -973,9 +1013,11 @@ If we did the same test in a <a href=https://en.wikipedia.org/wiki/Compiled_lang
 
 When you use smart functions in Python libraries, like (many of) those in numpy, numpy will actually use an external library compiled in a language like C or Fortran that is able to send all of the calculation in one step to your computer processor, and in one step, get all the data back. This makes Python nearly as fast as a compiled language like C or Fortran, as long as you are smart in how you use it and avoid having "manual" `for` loops for large or long calculations. 
 
-(For small calculations, Python coded `for` loops are perfectly fine and very handy!)
+```{important}
+For _small_ calculations, Python coded `for` loops are perfectly fine and very handy!
+```
 
-In the language of interpreted programmers, finding smart ways of getting what you need done using "compiled library functions" is often referred to as <a href=https://en.wikipedia.org/wiki/Array_programming>vectorisation</a>. 
+In the language of interpreted programmers, finding smart ways of getting what you need done using "compiled library functions" is often referred to as [vectorisation](https://en.wikipedia.org/wiki/Array_programming). 
 
 Note that even normal mathematical operators are actually "vectorized functions" when they operate:
 <!-- #endregion -->
@@ -1060,7 +1102,7 @@ This may sound a bit cumbersome, and of course in this example calculating $\pi 
 In the next exercises, you are going to calculate the integral of the function $f(x) = e^{x^2}$ in the interval [0,1] using the Monte Carlo method. 
 
 ```{exercise}
-:label: NB4_
+:label: NB4_MC
 
 First, make a plot to get an idea of what the function looks like. 
 
@@ -1086,7 +1128,7 @@ For this, we will use the np.random.uniform() function, which generates random f
 Moreover, it is wise to define the area by four points: $x_a$, $x_b$, $y_a$ and $y_b$.
 
 ```{exercise}
-:label: NB4_
+:label: NB4_MC2
 
 Complete the code below to generate a random sample of y-values in an appropriate range.
 ```
@@ -1104,9 +1146,11 @@ random_y = np.random.uniform( , ,size=N)
 
 Next, we want to determine the number of points in our sample that fall within the area under the line f(x). 
 
-**Exercise 4.13**
+```{exercise}
+:label: NB4_ex_MC3
 
 Determine the number of points that satisfy this condition using a for loop and calculate the value of the integral.
+```
 
 ```python
 from time import time
@@ -1123,56 +1167,18 @@ print('The solution of the integral is %.6f' %(solution_integral))
 print('Time for calculation: %.3f s' %(time()-t1))
 ```
 
-We have a solution of the integral (much easier than on paper, right?)! But how do we know how accurate our solution is? First, compare your result to your estimate from the previous exercise. Does it make sense?
-
-To make a substantiated claim about the accuracy of our solution we have to determine the uncertainty in our result. As we are basically performing a count, Poisson statistics tells us that the uncertainty in the counted number of points that satisfy the condition is the square root of the counted number: $u(N_{counted}) = \sqrt{N_{counted}}$.
-We can then determine the uncertainty in the area using the calculus approach.
-
-Let's check our solution by comparing it to the answer given by another numerical method from the scipy library.
-
-```python
-from scipy.integrate import quad
-
-Area = np.abs(x_b-x_a)*np.abs(y_b-y_a)
-err_solution = Area*np.sqrt(s)/N          #estimated error of our solution, which is the area of our random uniform box divided by the number of points used in the calculation times the poisson uncertainty
-
-scipy_solution = quad(f,0,1)       #calculating integral using quad function from scipy, returns: value of integral and estimated error
-
-abs_difference = np.abs(solution_integral-scipy_solution[0]) #determine absolute difference between solutions
-
-
-assert abs_difference <= 2*np.sqrt(err_solution**2 + scipy_solution[1]**2), 'The results are not in agreement'  #check if the values are in agreement 
-
-print('Our solution: %.3f +/- %.3f' %(solution_integral, err_solution))
-print('Scipy solution: %.14f +/- %.14f' %(scipy_solution[0], scipy_solution[1]))
-print('Difference between the solutions: %.6f' %(abs_difference))
-```
-
-Looks pretty good!
-
-Our method gives a reasonable answer, but as you can see the uncertainty is relatively high...If we want to improve our result we should use more points to lower the uncertainty (which scales with $\sqrt{N}$). However, the for loop we used is already quite slow. More points would mean an annoyingly long calculation. 
-
-We should therefore try to avoid the use of a for loop and instead use a comparison operator to speed up the calculation.
-
 ```{exercise}
-:label: NB4_
-Again, complete the code below and calculate the integral, this time without using a for loop.
+:label: NB4_ex_MC4
+
+Now do the same but not using a for loop.
 ```
 
 ```python
-t1 = time()
+# Your code here
 
-s = np.sum(  <= )
-
-solution_integral = 
-
-print('The solution of the integral is %.6f' %(solution_integral))            
-print('Time for calculation: %.3f s' %(time()-t1))
 ```
 
-This is much faster!
-
-Now lastly we want to plot our random generated points that are within the area underneath f(x) and those that are not in the same graph with a different colour. For this, we need the actual values of the points that satisfy the condition.
+We want to plot our random generated points that are within the area underneath f(x) and those that are not in the same graph with a different colour. For this, we need the actual values of the points that satisfy the condition.
 
 As you have seen before, a comparison operation on a numpy array returns a type boolean array:
 
@@ -1201,7 +1207,7 @@ print(new_array)
 ```
 
 ```{exercise}
-:label: NB4_
+:label: NB4_ex_MC5
 
 Make a figure in which you plot:
 
@@ -1222,9 +1228,9 @@ random_y = np.random.uniform( , ,1000)
 ```
 
 ```{exercise}
-:label: NB4_
+:label: NB4_ex_mov_av
 
-One way to 'improve' the quality of your data, making it less noisy, is the use of a <a href="https://en.wikipedia.org/wiki/Moving_average">moving average filter</a>. The moving average filter calculates the average value of N elements, N often being 3 or 5. This smooth out any abrupt changes and allows a better focus on long term trends. Of course you will lose two elements of the entire dataset (think yourselves why). 
+One way to 'improve' the quality of your data, making it less noisy, is the use of a [moving average filter](https://en.wikipedia.org/wiki/Moving_average). The moving average filter calculates the average value of N elements, N often being 3 or 5. This smooth out any abrupt changes and allows a better focus on long term trends. Of course you will lose two elements of the entire dataset (think yourselves why). 
 
 
 The filtered data is stored in an array: $F(i) = \frac{p(i)+p(i+1)+p(i+2)}{3}$, looped over all elements $p(i)$. More precise: $F(i)=\frac{1}{k}\sum_{i}^{i+k-1}p(i)$
