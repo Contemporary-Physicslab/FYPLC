@@ -22,6 +22,7 @@ project:
         - file: content/Notebook 3/NB3_ex_sol.ipynb
         - file: content/Notebook 4/NB4_ex_sol.ipynb
         - file: content/Notebook 5/NB5_ex_sol.ipynb
+        - file: content/Notebook 6/NB6_ex_sol.ipynb
 
     - title: Example exams
       children: 

@@ -30,8 +30,8 @@ By now you have everything that you need. Pixi will take care of the installatio
 
 We did not yet install Python and packages. We will do so now.
 
-5. Navigate to the `FYPLC` folder, right click on the folder and choose `Open in Terminal`. 
-6. Type `pixi install` and hit enter.
+3. Navigate to the `FYPLC` folder, right click on the folder and choose `Open in Terminal`. 
+4. Type `pixi install` and hit enter.
   
 We already created a `.toml` file in which we specified what needs to be installed. It will take a while for your computer to download and install all packages.
 
