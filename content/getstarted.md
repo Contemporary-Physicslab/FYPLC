@@ -43,10 +43,10 @@ For MacOS: run `chmod +x ./start_macos.command && xattr -d com.apple.quarantine 
 
 (run_course_files)=
 ## Run course files
-Once everything is installed simply type `pixi run start` and hit enter. This will work because in the `.toml` file we created a task called `start` which runs jupyter lab. Hence, running `pixi run start` is equivalent to `pixi run jupyter lab`. 
+Once everything is installed simply type `pixi run jupyter` and hit enter. This will work because in the `.toml` file we created a task called `jupyter` which runs jupyter lab. Hence, running `pixi run jupyter` is equivalent to `pixi run jupyter lab`. 
 
 ```{tip}
-Want to see the notebooks as a clear website (as probably seen here)? Run `pixi run myst start` and it will spin up a local server where the website is live hosted.
+Want to see the notebooks as a clear website (as probably seen here)? Run `pixi run myst` and it will spin up a local server where the website is live hosted.
 
 ```
 
