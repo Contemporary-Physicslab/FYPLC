@@ -50,6 +50,21 @@ Want to see the notebooks as a clear website (as probably seen here)? Run `pixi 
 
 ```
 
+```{Warning} Common issues and solutions
+
+**Windows**
+
+Pixi might not work correctly when the project files are stored in OneDrive. To check if this is the case, execute `pwd` in the terminal and check if the path contains the word "OneDrive". Move the project files to a local folder, e.g. `C:\Users\<my_username>\TN`.
+
+**macOS**
+
+If Pixi is installed but there is an error when executing `pixi start jupyter` a good first step is to reinstall the pixi enviroment by entering in the terminal: `pixi lock && pixi reinstall`.
+
+**iCloud**
+There is an issue with Pixi when the environment is stored in a folder on iCloud. To check if this is the case, run `pwd` in the folder with the project files. If you see a path containing a colon (`:`) you should move the project files to a local folder e.g. `~/Documents`. 
+
+````
+
 ## Start new projects with pixi
 For this course we created a pixi.toml file for you. We specified which software / libraries / packages should be installed. What if you have a new project where you need to use Python?
 
