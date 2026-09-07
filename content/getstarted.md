@@ -92,3 +92,21 @@ Moving through your folder with the command line
 
 ````
 
+## Conceptmap
+
+| Term | Description |
+| --- | --- |
+| Jupyter | Open Source Project |
+| Jupytext | Jupyter notebooks into plain text files you can edit in any IDE |
+| Jupyter Notebook | web-based interactive computing platform |
+| Jupyter Lab | application to run notebooks |
+| Markdown | a markup language |
+| Jupyter Book | a collection of notebooks presented as a book / website |
+| Pixi | a package manager to install/manage the above |
+
+```{figure} ../figures/conceptmap.png
+:width: 80%
+:label: fig_conceptmap
+
+A concept map of Jupyter, Jupyter Notebook, Jupyter Book, Markdown, Jupyter lab & Pixi. Figure AI generated
+```
