@@ -50,7 +50,7 @@ Want to see the notebooks as a clear website (as probably seen here)? Run `pixi 
 
 ```
 
-```{Warning} Common issues and solutions
+```{warning} Common issues and solutions
 
 **Windows**
 
