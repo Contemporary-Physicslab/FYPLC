@@ -12,4 +12,10 @@ permissions:
   
 jobs:
   deploy:
-    uses: FreekPols/JB-workflows/.github/workflows/minimal_workflow.yml@main
+    uses: FreekPols/JB-workflows/.github/workflows/menu.yml@main
+    with:
+      build_pdf: false
+      execute_python: false
+      run_nb_checks: false
+      run_fig_checks: true
+      run_code_checks: false
