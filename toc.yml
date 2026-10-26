@@ -6,24 +6,41 @@ project:
     - file: Readme.md
     - file: content/getstarted.md
 
-    - file: content/coursefiles.md
+    - file: content/python/coursefiles.md
       children:
-        - file: content/Notebook 1/Notebook 1 Python Basics.ipynb
-        - file: content/Notebook 2/Notebook 2 Functions.ipynb
-        - file: content/Notebook 3/Notebook 3 Program Flow Control.ipynb
-        - file: content/Notebook 4/Notebook 4 Scientific Computing.ipynb
-        - file: content/Notebook 5/Notebook 5 Data in Python.ipynb
-        - file: content/Notebook 6/Notebook 6 Measurement uncertainty.ipynb
+        - file: content/python/Notebook 1/Notebook 1 Python Basics.ipynb
+        - file: content/python/Notebook 2/Notebook 2 Functions.ipynb
+        - file: content/python/Notebook 3/Notebook 3 Program Flow Control.ipynb
+        - file: content/python/Notebook 4/Notebook 4 Scientific Computing.ipynb
+        - file: content/python/Notebook 5/Notebook 5 Data in Python.ipynb
+        - file: content/python/Notebook 6/Notebook 6 Measurement uncertainty.ipynb
     
     - title: Solutions
       children:
-        - file:  content/Notebook 1/NB1_ex_sol.ipynb
-        - file: content/Notebook 2/NB2_ex_sol.ipynb
-        - file: content/Notebook 3/NB3_ex_sol.ipynb
-        - file: content/Notebook 4/NB4_ex_sol.ipynb
-        - file: content/Notebook 5/NB5_ex_sol.ipynb
-        - file: content/Notebook 6/NB6_ex_sol.ipynb
+        - file: content/python/Notebook 1/NB1_ex_sol.ipynb
+        - file: content/python/Notebook 2/NB2_ex_sol.ipynb
+        - file: content/python/Notebook 3/NB3_ex_sol.ipynb
+        - file: content/python/Notebook 4/NB4_ex_sol.ipynb
+        - file: content/python/Notebook 5/NB5_ex_sol.ipynb
+        - file: content/python/Notebook 6/NB6_ex_sol.ipynb
 
     - title: Example exams
       children: 
-        - file: content/Example exam/Example Exam.ipynb
+        - file: content/python/Example exam/Example Exam.ipynb
+    
+    - title: Pixi
+      children:
+        - file: content/pixi/pixi_intro.md
+        - file: content/pixi/pixi_basics.md
+        
+    - title: Git
+      children:
+        - file: content/git/index.md
+        - file: content/git/introduction.md
+        - file: content/git/basics.md
+        - file: content/git/startexercise.md
+        - file: content/git/branchexercise.md
+        - file: content/git/readm_lic.md
+        - file: content/pages.md
+        - file: content/commands.md
+        - file: content/branch_rules.md

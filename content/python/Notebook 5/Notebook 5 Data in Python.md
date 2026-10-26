@@ -6,7 +6,7 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.3'
-      jupytext_version: 1.19.5
+      jupytext_version: 1.19.6
   kernelspec:
     display_name: Python 3 (ipykernel)
     language: python
@@ -361,6 +361,7 @@ As explained earlier on, we can plot functions as well. It is useful to plot bot
 <!-- #endregion -->
 
 ```python
+%matplotlib widget
 line = 2*t
 plt.figure()
 plt.plot(t,v, '.')
@@ -371,7 +372,7 @@ plt.show()
 ```
 
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-ecd3b09678cacd45", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
-Here, we also used the `linewidth` parameter (which can be shorted to `lw` to save typing) to make the line a bit fatter so it is easier to see, and used the '--' plot format specifier to make it a dashed line. 
+Here, we also used the `linewidth` parameter (which can be shorted to `lw` to save typing) to make the line a bit fatter so it is easier to see, and used the '--' plot format specifier to make it a dashed line. Moreover, we included `%matplotlib widget` which allows you to zoom in on specific parts of the plot.
 <!-- #endregion -->
 
 <!-- #region nbgrader={"grade": false, "grade_id": "cell-46dd5bd28954941b", "locked": true, "schema_version": 3, "solution": false, "task": false} -->
