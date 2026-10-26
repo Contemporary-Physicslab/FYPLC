@@ -1,3 +1,8 @@
+---
+authors: 
+  - FP
+---
+
 # Introduction to Python for Physicists 
 
 In this repository, you can find the source code of the material developed for an introduction to Python for physicists that runs as a "minicourse" of 1.5 ECTS as part of the "First Year Physics Lab Course" of the Applied Physics program at TU Delft.

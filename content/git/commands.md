@@ -1,3 +1,10 @@
+---
+authors: 
+  - FP
+  - RH
+  - MM
+---
+
 (ch_commands)=
 # Commands summary
 > Below we describe the steps for VSC or commands in the command line to do specific git things.

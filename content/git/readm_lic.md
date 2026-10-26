@@ -1,3 +1,9 @@
+---
+authors: 
+  - FP
+  - RH
+  - MM
+---
 # Setting up a Git repository
 
 > Here we briefly address to important components of every git repository: the gitignore file and the README file. 

@@ -6,10 +6,19 @@ project:
   # description:
   # keywords: []
   authors: 
-  - name: Freek Pols
+  - id: FP
+    name: Freek Pols
     institution: Delft University of Technology
-  - name: Gary Steele
+  - id: GS
+    name: Gary Steele
     institution: Delft University of Technology
+  - id: RH
+    name: Rolf Hut
+    instituion: Delft University of Technology
+  - id: MM
+    name: Mark Maletto
+    institution: Delft University of Technology
+
   github: https://github.com/Contemporary-Physicslab/FYPLC
   date: 2026-08-20
   copyright: Delft University of Technology, CC BY NC 4.0

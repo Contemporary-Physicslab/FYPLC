@@ -1,3 +1,7 @@
+---
+authors: 
+  - FP
+---
 (ch_start_exercise)=
 # Start exercise
 

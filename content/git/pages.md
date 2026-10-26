@@ -1,3 +1,7 @@
+---
+authors: 
+  - FP
+---
 # Pages
 
 > Here we explain GitHub pages, a way to easily publish your work as a website. 

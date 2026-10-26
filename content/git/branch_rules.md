@@ -1,3 +1,9 @@
+---
+authors: 
+  - FP
+  - RH
+  - MM
+---
 (ch_branchprotect)=
 # Protecting the main branch
 

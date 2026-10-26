@@ -1,3 +1,7 @@
+---
+authors: 
+  - FP
+---
 # Course files
 
 We provide five notebooks on the basics of Python. You might already know some Python, hence per notebook we include a pre-test in which you can check whether the notebook is fit for you. You can use it in two ways:
