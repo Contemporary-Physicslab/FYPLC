@@ -965,7 +965,7 @@ The table below gives measurements of the voltage of and current through a lamp.
 :class: dropdown
 1.  $P = (1.5 \pm 0.6)\cdot 10^{-3}$ W
 
-2.  $R = (2 \pm 1\)cdot 10^4  \Omega$
+2.  $R = (2 \pm 1)\cdot 10^4  \Omega$
 
 3.  The current, because it has the biggest relative uncertainty.
 ````

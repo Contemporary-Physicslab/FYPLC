@@ -55,11 +55,13 @@ In the message, please include:
 
 ## Developers
 
-The first five notebooks were developed by Gary Steele <g.a.steele@tudelft.nl> with input and feedback from Jeroen Kalkman <J.Kalkman@tudelft.nl> and Freek Pols <c.f.j.pols@tudelft.nl>. These notebooks were then developed further by Freek. All other notebooks were developed by Freek Pols
+The first five notebooks were developed by Gary Steele <g.a.steele@tudelft.nl> with input and feedback from Jeroen Kalkman <J.Kalkman@tudelft.nl> and Freek Pols <c.f.j.pols@tudelft.nl>. These notebooks were then developed further by Freek. All other notebooks were developed by Freek Pols. The notebooks on git have been made by Freek Pols, Rolf Hut and Mark Maletto.
 
-```python
+Per notebook we indicate the main contributors.
 
-```
+Note that many TA's and students have contributed to this project.
+
+
 
 Copyright  Delft University of Technology and contributors 2019.
 

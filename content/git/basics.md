@@ -20,8 +20,6 @@ Of course you start with an empty canvas, @fig_tree_1, where you quickly draw a 
 :class: grid grid-cols-2 items-end gap-4 subfigure-grid
 
 ```{figure} figures/tree_1.png
-:source: Freek Pols
-:license: CC-BY
 :width: 80%
 :label: fig_tree_1
 
@@ -29,8 +27,6 @@ Starting with an empty canvas
 ```
 
 ```{figure} figures/tree_2.png
-:source: Freek Pols
-:license: CC-BY
 :width: 80%
 :label: fig_tree_2
 
@@ -43,8 +39,7 @@ The first two snapshots of your project. You can always go back to earlier versi
 You draw a background and a sun, where you again make a 'snapshot' of your work @fig_tree_3. 
 
 ```{figure} figures/tree_3.png
-:source: Freek Pols
-:license: CC-BY
+
 :width: 50%
 :label: fig_tree_3
 
@@ -58,8 +53,7 @@ Now it is time for your friend to draw the cat @fig_tree_4a while you draw some 
 :class: grid grid-cols-2 items-end gap-4 subfigure-grid
 
 ```{figure} figures/tree_4a.png
-:source: Freek Pols
-:license: CC-BY
+
 :width: 80%
 :label: fig_tree_4a
 
@@ -67,8 +61,7 @@ One 'branch' where a cat is added
 ```
 
 ```{figure} figures/tree_4b.png
-:source: Freek Pols
-:license: CC-BY
+
 :width: 80%
 :label: fig_tree_4b
 
@@ -82,8 +75,7 @@ When both are happy you combine these two into one main painting, @fig_tree_5. Y
 
 
 ```{figure} figures/tree_5.png
-:source: Freek Pols
-:license: CC-BY
+
 :width: 50%
 :label: fig_tree_5
 
@@ -91,8 +83,7 @@ After merging the two branches
 ```
 
 ```{figure} figures/tree_5a.png
-:source: Freek Pols
-:license: CC-BY
+
 :width: 50%
 :label: fig_tree_5a
 
@@ -122,8 +113,7 @@ Note the difference `-c` which **c**reates a new branch!
 
 
 ```{figure} figures/branches.png
-:source: Freek Pols
-:license: CC-BY
+
 :width: 70%
 :label: fig_branches
 
@@ -183,8 +173,7 @@ It might happen that two people (or you in two different branches) have made cha
 :class: grid grid-cols-2 items-end gap-4 subfigure-grid
 
 ```{figure} figures/tree_conflict_1.png
-:source: Freek Pols
-:license: CC-BY
+
 :width: 80%
 :label: tree_conflict_1
 
@@ -192,8 +181,7 @@ In one branch a cloud was added
 ```
 
 ```{figure} figures/tree_conflict_2.png
-:source: Freek Pols
-:license: CC-BY
+
 :width: 80%
 :label: tree_conflict_2
 
@@ -206,8 +194,7 @@ Merge conflicts come into existence when a same part is edited, git doesn't know
 You will not to solve the conflict, decide what to keep, what to discard, or keep both... 
 
 ```{figure} figures/tree_conflict_solved.png
-:source: Freek Pols
-:license: CC-BY
+
 :width: 70%
 :label: tree_conflict_solved
 

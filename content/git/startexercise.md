@@ -44,6 +44,7 @@ Open Visual Studio Code and open (`File/Open Folder`) the folder where your repo
 ## Exercise
 You and your partner can now take turns in writing a poem.
 
+````{exercise} Writing a Poem
 Copy the start of the poem below and replace the text in the README.md file (paste). 
 
 ```
@@ -53,7 +54,7 @@ When I think about physics  ...
 ```
 
 As you can see, the first line is given - the _owner_ writes the second line, _commits_ and _pushes_ the next line to git. The _collaborator_ pulls the repo, writes the third line, and commits and pushes to git, and so on. Make a poem of about 10 lines. See below on pulling and pushing changes. Where we only tell you what to do, not what it means.
-
+````
 
 
 ## Pulling & Pushing changes

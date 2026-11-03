@@ -14,7 +14,7 @@ project:
     institution: Delft University of Technology
   - id: RH
     name: Rolf Hut
-    instituion: Delft University of Technology
+    institution: Delft University of Technology
   - id: MM
     name: Mark Maletto
     institution: Delft University of Technology
@@ -32,3 +32,5 @@ site:
   options:
     favicon: figures/favicon.ico
     logo: figures/TUDelft_logo_rgb.png
+  parts:
+    navbar_end: navbar_end.md

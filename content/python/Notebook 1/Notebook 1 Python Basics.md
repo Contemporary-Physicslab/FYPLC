@@ -1156,7 +1156,7 @@ The other tool is to type your variable, put a dot behind it and autocomplete us
 
 
 ```{exercise}
-:label: NB1_whos
+:label: NB2_whos
 Try **?%whos** below and see what information is given.
 ```
 
