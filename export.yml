@@ -1,0 +1,271 @@
+version: 1
+project:
+  downloads:
+    - id: thesis-pdf
+  exports:
+    - id: thesis-pdf
+      format: typst
+      template: https://github.com/TUD-JB-OS/typst_template.git
+      output: ./exports/output.pdf
+
+# ==============================================================================
+# Document Structure and Front Matter
+# ==============================================================================
+
+      show_cover_full: true               # Render a separate cover page before the title page. Default: true.
+      show_title_page: true               # Render the title page after the cover page. Default: true.
+      show_contributor_affiliations: true # Show affiliation lines under supervisor and committee names. Default: true.
+
+      # Order of fixed front-matter part pages before the table of contents.
+      # Part files are still declared in myst.yml under project.parts; this
+      # option only controls their PDF order. Empty or missing parts are skipped.
+      # Accepted values: colophon, abstract, preface, acknowledgements, dedication.
+      # Default: colophon, abstract, preface, acknowledgements, dedication.
+      # frontmatter_order: colophon, abstract, acknowledgements, dedication, preface
+
+# ==============================================================================
+# Table of Contents and Lists of Figures/Tables
+# ==============================================================================
+
+      show_toc: true                 # Render the table of contents in the front matter. Default: true.
+      toc_depth: 2                   # Maximum heading depth shown in the table of contents. Default: 2.
+      show_list_of_figures: false    # Render a list of figures in the front matter. Default: false.
+      show_list_of_tables: false     # Render a list of tables in the front matter. Default: false.
+
+# ==============================================================================
+# Verso Page Options (for main matter chapters)
+# ==============================================================================
+      # Option for verso blank page that is **always** inserted automatically 
+      # when required to ensure the main matter chapters start on recto page:
+      # When the page statement is enabled, the inserted verso page displays
+      # the statement below instead of remaining fully blank. Default: false.
+
+      show_verso_blank_page_statement: true
+      verso_blank_page_statement: This page is intentionally left blank. # Statement printed on the inserted verso page.
+
+# ==============================================================================
+# Bibliography Options 
+# ==============================================================================
+
+      show_bibliography: true                 # Render the bibliography section after the document content. Default: true.
+      bibliography_title: Bibliography        # Title used for the bibliography section. Default: Bibliography.
+      bibliography_style: chicago-author-date # Bibliography style passed to Typst. Options: ieee | apa | mla | chicago-author-date | chicago-notes
+      bibliography_numbered_heading: false    # Number the bibliography as a top-level heading. Default: false.
+
+
+# ==============================================================================
+# Page Layout and Styling
+# ==============================================================================
+      # Paper size for the whole document. Default: a4.
+      # Common alternatives: us-letter, b5
+      paper_size: a4
+      
+      # Margin defaults come from the template itself, but can be overridden here:
+      # margin_top_cm: 2.5
+      # margin_bottom_cm: 2.5
+      # margin_left_cm: 2.5
+      # margin_right_cm: 2.5
+
+# ==============================================================================
+# Typography / Font Options      
+# ==============================================================================
+
+      font_size_pt: 10     # Base text size in points. Default: 11.
+      line_spacing_em: .7   # Paragraph leading in em units. Default: 0.7.
+
+
+      # The template defaults stay on Typst's built-in families so exports work
+      # even before you enable bundled fonts.
+      # 
+      # Defaults:
+      # font_body: Libertinus Serif
+      # font_math: New Computer Modern Math
+      # font_mono: DejaVu Sans Mono
+      #
+      # Bundled font families in ../src/assets/fonts:
+      # - STIX Two Text + STIX Two Math:
+      #     lighter and a familiar (from the TeX universe) serif + math pair
+      # - JetBrains Mono:
+      #     recommended code font for all presets
+      # - Atkinson Hyperlegible Next serif font + New Computer Modern Math font:
+      #     accessible sans-first option
+      # - Atkinson Hyperlegible Mono:
+      #     available if you want a matching mono companion to the Atkinson Hyperlegible Next body font
+      #
+      # If you are using Github Actions for your builds, 
+      # the template's bundled fonts will be available by default without any additional configuration, 
+      # because the build script sets TYPST_FONT_PATHS to include the template's font assets.
+      # To use the bundled fonts locally, first make them visible to you local Typst compiler.
+      # 1. From the "example" folder, set TYPST_FONT_PATHS:
+      #
+      #    Windows (PowerShell):
+      #    $env:TYPST_FONT_PATHS = (Resolve-Path ..\src\assets\fonts)
+      #
+      #    MacOS/Linux/WSL (bash/zsh):
+      #    export TYPST_FONT_PATHS="$(cd ../src/assets/fonts)"
+      #
+      #    You could also install the fonts on your system to make them available globally, 
+      #    but setting TYPST_FONT_PATHS is a more self-contained way to work with them in this project.
+      #
+      #
+      # 2. Suggested presets:
+      #
+      #    Serif preset:
+      #    font_body: STIX Two Text
+      #    font_math: STIX Two Math
+      #    font_mono: JetBrains Mono
+      #
+      #    Accessible Sans preset:
+      #    font_body: Atkinson Hyperlegible Next
+      #    font_math: New Computer Modern Math
+      #    font_mono: JetBrains Mono
+      #    Optional matching Atkinson mono variant:
+      #    font_mono: Atkinson Hyperlegible Mono
+      #
+      #
+      # If you only want a code-font upgrade (recommended), keep the template defaults for
+      # body and math and override only:
+      # font_mono: JetBrains Mono
+
+
+# ==============================================================================
+# Branding and Shared Assets
+# ==============================================================================
+      # Optional: override the shared fallback logo used on the title page
+      # and on the graphical cover when no cover-specific logo file is set.
+      # If omitted, the template's built-in logo is used.
+      # logo: content/assets/logo.svg
+      
+      # Optional ISBN project option shown in the colophon publication table when provided.
+      # isbn: "978-3-16-148410-0"
+
+# ==============================================================================
+# Cover Page Options
+# ==============================================================================
+      # Cover variant: simple | graphical | custom (or 1 | 2 | 3). Default: graphical.
+      # cover_page_variant: simple
+      
+      # Show or hide the document subtitle on the cover page:
+      # Applies to both simple and graphical cover variants. Default: true.
+      # show_cover_subtitle: true
+      
+      ## Graphical cover options:
+      # Recommended: replace the default template cover image with your own.
+      # If omitted, the template's built-in cover image is used.
+      cover_background_image: content/assets/cover.png
+      # Legacy alias: cover_image
+      
+      cover_graphical_appearance: white-on-dark            # Graphical-cover contrast preset: white-on-dark | black-on-light. Default: white-on-dark.
+      cover_graphical_alignment: center                    # Graphical-cover alignment for the title box: left | center. Default: left.
+      cover_logo_alignment: left                           # Graphical-cover alignment for the bottom branding block: left | center. Default: left.
+      # cover_title_box_color: "#00A6D6"                   # Optional override for the translucent title-box base color: black | white | hex color. 
+      cover_title_box_opacity_pct: 80                      # Opacity of the title box on the graphical cover, from 0 to 100. Default: .
+      
+      # Optional per-element color overrides for the graphical cover:
+      # Accepted values: white, black, or a hex color like #f5f5f5.
+      # cover_title_text_color: white
+      # cover_bottom_text_color: black
+      
+      # Optional font weights for the graphical-cover elements:
+      # Passed directly to Typst, for example regular, medium, bold, light, or extralight.
+      cover_title_weight: bold
+      # title_font: roboto slab # "arial"
+      # cover_subtitle_weight: regular
+      # cover_author_weight: regular
+
+      # Optional extra multi-line text in the title box, below the author:
+      # cover_title_box_text: |
+      #    Optional extra multi-line text
+      #    in the title box
+      
+      # Optional override for the bundled graphical-cover logo variant: white | black.
+      # cover_logo_variant: black
+      
+      # Optional custom white/black cover-logo files:
+      # cover_logo_white: content/assets/logo_white.svg
+      # cover_logo_black: content/assets/logo_black.svg
+      
+      # Optional small text below the cover logo. Newlines are preserved:
+      # cover_logo_text: |
+      #       Optional small text below the cover logo, 
+      #       e.g. for an imprint line.
+      
+      # Show a translucent ribbon behind the graphical-cover bottom logo/text cluster. Default: false.
+      # show_cover_bottom_ribbon: true
+      
+      # Optional base color for the graphical-cover bottom ribbon. Defaults to title-box color.
+      # cover_bottom_ribbon_color: black
+      
+      # Opacity of the graphical-cover bottom ribbon, from 0 to 100. Default: 55.
+      # cover_bottom_ribbon_opacity_pct: 55
+      
+      # Optional vertical offset in cm for the graphical-cover bottom logo/text block. Default: -1.2.
+      # cover_bottom_block_dy_cm: -1.2
+      
+
+# ==============================================================================
+# Title Page Options
+# ==============================================================================
+      # Title-page variant: basic (or "simple") | formal | custom (or 1 | 2 | 3). Default: formal.
+      # title_page_variant: basic
+
+      # Formal title-page statement text. This behaves like the cover text
+      # fields, but placeholders can be replaced from mapped project.options values
+      # in options.yml and shared project metadata in myst.yml:
+      # $thesis_degree, $thesis_program, $thesis_track, $thesis_faculty,
+      # $thesis_institution, $thesis_defense_date, $isbn, and $doi.
+      # Curly braces are also accepted, e.g. {thesis_degree}.
+      #
+      # title_page_formal_statement: |
+      #   to obtain the degree of $thesis_degree in $thesis_program
+      #   at the $thesis_faculty, $thesis_institution,
+      #   to be defended on $thesis_defense_date
+      #
+      # Alternative wording example:
+      title_page_formal_statement: |
+        submitted in partial fulfillment of the requirements for the degree of $thesis_degree
+        in $thesis_program
+        at $thesis_institution,
+        to be defended on $thesis_defense_date.
+
+      ## Basic/simple variant options (ignored by the centered formal variant):
+      # Alignment of the title and subtitle block: left | center. Default: center.
+      # title_page_basic_title_alignment: center
+      
+      # Alignment of the metadata table: left | center. Default: left.
+      # title_page_basic_table_alignment: left
+      
+      # Alignment of the title-page logo: left | center. Default: center.
+      # title_page_logo_alignment: center
+
+      # Note: Legacy aliases show_title_page_cover_description, title_page_cover_description,
+      # show_title_page_confidentiality_statement, and title_page_confidentiality_statement
+      # are still accepted but refer to the colophon equivalents below.
+      # logo_titlepage_width: 3.9cm
+# ==============================================================================
+# Colophon Options
+# ==============================================================================
+      # The top of the colophon page comes from project.parts.colophon.
+      # These settings control the automated bottom publication block.
+      
+      show_colophon_publication_info: true      # Show the automated colophon publication table when publication values are present. Default: true.
+      show_colophon_cover_description: True     # Show the optional cover description row in the colophon publication table. Default: false.
+      colophon_cover_description: The cover image is a template demonstration background.
+      
+      show_colophon_confidentiality_statement: true       # Show the optional confidentiality statement above the colophon publication table. Default: false.
+      colophon_confidentiality_statement: This thesis is shared using a CC-BY-4.0 license.      
+      colophon_company_logo: content/assets/JBlogo.svg    # Optional secondary logo (e.g. company or research group) shown in the colophon when provided.
+
+      # Optional fields shown in the colophon publication table:
+      # colophon_printer: Printer name
+      # colophon_publisher: Publisher name
+      colophon_copyright: © 2026 Freek Pols
+
+      
+      # Optional custom text shown below the colophon publication table and above the template watermark.
+      colophon_custom_text: |
+         Optional custom colophon text below the publication table.
+      
+      # Show the MyST/Typst/JBOS template watermark note at the bottom of the colophon. Default: true.
+      show_colophon_watermark: true
+

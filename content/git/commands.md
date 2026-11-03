@@ -144,3 +144,7 @@ And then push your work to GitHub
 | `git remote add origin URL` | Links a local repository and an online repository at the specified URL |
 | `git push origin branch_name` | Pushes local changes to the specified branch of the online repository |
 | `git pull origin branch_name` | Pull changes from the online repository into local repository |
+| `git branch -r `| Checkout which branches exist |
+| `git checkout -b local_branch_name origin/remote_branch_name` | Checkout remote branch as a local branch |
+| `git stash` | Temporarily save your uncommitted changes to be able to switch between branches |
+| `git stash pop` | Reapply the saved changes, to continue to work on them |

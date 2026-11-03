@@ -26,6 +26,7 @@ project:
 
 extends:
   - toc.yml
+  - export.yml
           
 site:
   template: book-theme

@@ -7,6 +7,7 @@ authors:
 
 > Here we describe how to install the software required. You can do it on your own, but we advise to do it during the first lecture. Moreover, do not worry when things are not yet fully clear - it will take some time to understand what is happening and why we think this is a good way to work.
 
+
 (software)=
 ## Software
 
