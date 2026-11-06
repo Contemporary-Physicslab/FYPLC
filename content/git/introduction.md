@@ -113,6 +113,11 @@ git config --list
 ```{note}
 When you use Git through this account for the first time, you will be asked to complete a verification step.
 ```
+
+**Install Jupyterlab-git**  
+JupyterLab has an extension that allows you to use git. You can this to you pixi environment running: `pixi add jupyterlab-git`. When you do so, the extension is added to the pixi.toml file. When starting JupyterLab you will see an extra button at the left to run git commands.
+
+
 **Install VSC & extensions**
 Visual Studio Code (VSC) includes built-in Git functionality. With VSC, you can stage, commit, and push changes directly from the editor, view diffs, and manage branches without leaving your coding environment. This integration streamlines your workflow and reduces the need to switch between multiple tools. As VSC is also used to work with editing markdown files, writing other (programming) languages like LaTeX or C++, we want to install this. 
 
