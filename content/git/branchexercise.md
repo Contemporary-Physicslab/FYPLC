@@ -34,4 +34,5 @@ You can see what branch you are working on in the source control panel or by run
 
 Create a branch with a logical name (note that this name will become visible in the repo as well). Make an edit in the Readme.md file and push your edits (and thus the new branch) to GitHub.
 
+Create a pull request. Let your partner review the changes and approve / or leave a comment.
 ``` 
