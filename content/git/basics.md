@@ -39,7 +39,6 @@ The first two snapshots of your project. You can always go back to earlier versi
 You draw a background and a sun, where you again make a 'snapshot' of your work @fig_tree_3. 
 
 ```{figure} figures/tree_3.png
-
 :width: 50%
 :label: fig_tree_3
 
@@ -53,7 +52,6 @@ Now it is time for your friend to draw the cat @fig_tree_4a while you draw some 
 :class: grid grid-cols-2 items-end gap-4 subfigure-grid
 
 ```{figure} figures/tree_4a.png
-
 :width: 80%
 :label: fig_tree_4a
 
@@ -61,7 +59,6 @@ One 'branch' where a cat is added
 ```
 
 ```{figure} figures/tree_4b.png
-
 :width: 80%
 :label: fig_tree_4b
 
@@ -75,7 +72,6 @@ When both are happy you combine these two into one main painting, @fig_tree_5. Y
 
 
 ```{figure} figures/tree_5.png
-
 :width: 50%
 :label: fig_tree_5
 
@@ -83,7 +79,6 @@ After merging the two branches
 ```
 
 ```{figure} figures/tree_5a.png
-
 :width: 50%
 :label: fig_tree_5a
 
@@ -113,7 +108,6 @@ Note the difference `-c` which **c**reates a new branch!
 
 
 ```{figure} figures/branches.png
-
 :width: 70%
 :label: fig_branches
 
@@ -144,8 +138,6 @@ git merge main
 ```
 
 ```{figure} figures/merge.png
-:license: CC-BY
-:source: Freek Pols
 :width: 20%
 :label: fig_merge
 
@@ -155,11 +147,9 @@ An example of merging.
 When merging to _main_ you see in @fig_branches check marks. We are able to protect branches and specify rules. For instance, one has to review the code first before allowing to merge. This protects the continuity of the main output. This is then called a _merge request_ (GitLab) or a _pull request_ (GitHub).
 
 ```{figure} figures/merge_request.png
-:license: CC-BY
-:source: Freek Pols
 :width: 30%
 :label: fig_merge_request
-:alt: 
+
 
 A merge request to a protected branch, where the merge needs both review and approval.
 ```
@@ -173,7 +163,6 @@ It might happen that two people (or you in two different branches) have made cha
 :class: grid grid-cols-2 items-end gap-4 subfigure-grid
 
 ```{figure} figures/tree_conflict_1.png
-
 :width: 80%
 :label: tree_conflict_1
 
@@ -181,7 +170,6 @@ In one branch a cloud was added
 ```
 
 ```{figure} figures/tree_conflict_2.png
-
 :width: 80%
 :label: tree_conflict_2
 
@@ -194,7 +182,6 @@ Merge conflicts come into existence when a same part is edited, git doesn't know
 You will not to solve the conflict, decide what to keep, what to discard, or keep both... 
 
 ```{figure} figures/tree_conflict_solved.png
-
 :width: 70%
 :label: tree_conflict_solved
 
