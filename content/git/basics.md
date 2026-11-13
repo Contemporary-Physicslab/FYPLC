@@ -92,9 +92,12 @@ Going back to a previous commit and changing the background
 
 Based on the idea of making a painting, you get a fair idea of git version control. The idea of git is often explained using a graph like in @fig_branches. It is called a tree, and it has branches. Every project has a _main_ branch, for a website this could be the files that the actual website is build from. But you might want to develop your website, change its appearance, but without the users of the website experiencing downtime. This is where the branches come in.
 
+
+::::{tab-set}
+:::{tab-item} terminal
 You can create a new branch by running
-```
-git switch -c <name_of_new_branch>
+```bash
+git switch -C <name_of_new_branch>
 ```
 in the terminal. This will create a new branch. You can check which branches are available and which is the branch you are working on by running:
 ```
@@ -104,7 +107,15 @@ and subsequently moving between branches by
 ```
 git switch <name_of_branch>
 ```
-Note the difference `-c` which **c**reates a new branch!
+Note the difference `-C` which **c**reates a new branch!
+:::
+:::{tab-item} VSC
+:::
+:::{tab-item} JupyterLab
+:::
+::::
+
+
 
 
 ```{figure} figures/branches.png
@@ -127,6 +138,9 @@ git branch -D <name_of_branch>
 (sec_merge)=
 ## Merge
 What you also can see is the possibility to synchronize the main branch to any of the newly made branches, see @fig_merge. If you do this locally, you always have to verify that your local files are up-to-date:
+
+::::{tab-set}
+:::{tab-item} terminal
 ```
 git switch main
 git pull origin main
@@ -136,6 +150,14 @@ After that you can _merge_:
 git switch <new-branch>
 git merge main
 ```
+:::
+:::{tab-item} online
+:::
+:::{tab-item} VSC
+:::
+:::{tab-item} Jupyterlab
+:::
+::::
 
 ```{figure} figures/merge.png
 :width: 20%

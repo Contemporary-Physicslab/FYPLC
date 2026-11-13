@@ -27,6 +27,9 @@ project:
     - title: Example exams
       children: 
         - file: content/python/Example exam/Example Exam.ipynb
+        - file: content/python/Example exam/Example Exam2.ipynb
+        - file: content/python/Example exam/Example Exam3.ipynb
+
     
     - title: Pixi
       children:
@@ -39,7 +42,8 @@ project:
         - file: content/git/basics.md
         - file: content/git/startexercise.md
         - file: content/git/branchexercise.md
+        - file: content/git/branch_rules.md
         - file: content/git/readm_lic.md
         - file: content/git/pages.md
         - file: content/git/commands.md
-        - file: content/git/branch_rules.md
+        

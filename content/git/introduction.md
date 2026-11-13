@@ -81,10 +81,10 @@ You do not need to understand everything at once. Start with the basic workflow,
 (sec_first_steps)=
 ## First steps
 
-**Create account GitHub**
+**Create account GitHub**  
 If you haven't an account yet, go to [https://github.com/](https://github.com/) and create a free account (sign up).
 
-**Install git**
+**Install git**  
 If you haven't installed git yet (not sure? run 
 
 ```
@@ -118,7 +118,7 @@ When you use Git through this account for the first time, you will be asked to c
 JupyterLab has an extension that allows you to use git. You can this to you pixi environment running: `pixi add jupyterlab-git`. When you do so, the extension is added to the pixi.toml file. When starting JupyterLab you will see an extra button at the left to run git commands.
 
 
-**Install VSC & extensions**
+**Install VSC & extensions**  
 Visual Studio Code (VSC) includes built-in Git functionality. With VSC, you can stage, commit, and push changes directly from the editor, view diffs, and manage branches without leaving your coding environment. This integration streamlines your workflow and reduces the need to switch between multiple tools. As VSC is also used to work with editing markdown files, writing other (programming) languages like LaTeX or C++, we want to install this. 
 
 Install [VSC](https://code.visualstudio.com/Download). 
