@@ -157,7 +157,21 @@ git merge main
 ```
 :::
 :::{tab-item} online
-If you go to GitHub and click on your repository, you may see a green button.
+If you go to GitHub and click on your repository, you may see a green button telling you there is a branch that can be merged - see @fig_merge_gh. If you click `compare & pull request`, a menu is opened. For the pull request you must specify the source and the destination. In our case we want to merge MRexample into main - see @fig_merge_gh_2. It might be helpful to include a summary of the changes. In our use case, we also want to assign a reviewer (your partner). The assignee will decide whether the code is good to merge. 
+
+```{figure} figures/merge_request_GH.png
+:label: fig_merge_gh
+:width: 70%
+
+Merge request is possible
+```
+
+```{figure} figures/merge_request_GH_2.png
+:label: fig_merge_gh_2
+:width: 70%
+
+Merge request with source and destination.
+```
 
 
 :::
