@@ -110,8 +110,13 @@ git switch <name_of_branch>
 Note the difference `-C` which **c**reates a new branch!
 :::
 :::{tab-item} VSC
+Create a new branch by clicking on the source control, the three dots, Branch, Create new branch.
+```{figure} figures/VSC_new_branch.png
+```
 :::
 :::{tab-item} JupyterLab
+```{figure} figures/JL_new_branch.png
+```
 :::
 ::::
 
@@ -152,6 +157,9 @@ git merge main
 ```
 :::
 :::{tab-item} online
+If you go to GitHub and click on your repository, you may see a green button.
+
+
 :::
 :::{tab-item} VSC
 :::
